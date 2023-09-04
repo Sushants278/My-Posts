@@ -8,25 +8,64 @@
 import UIKit
 
 class UserPostsViewController: UIViewController {
+    
+    private let viewModel = UserPostsViewModel()
+    private let userPostsView = UserPostsView()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        self.view.backgroundColor = .red
+        super.viewDidLoad()
+        self.view.backgroundColor = .white
         self.title = "User Posts"
-
-        // Do any additional setup after loading the view.
+        self.viewModel.userPostsViewModelDelegate = self
+        
+        self.userPostsView.tableView.register(UserPostTableViewCell.self, forCellReuseIdentifier: "UserPostCell")
+        self.userPostsView.tableView.dataSource = self
+        self.userPostsView.tableView.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.viewModel.fetchUserPosts()
     }
-    */
+    
+    override func loadView() {
+        
+        view = userPostsView
+    }
+}
 
+extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        viewModel.userPosts?.count ?? 0
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserPostCell", for: indexPath) as? UserPostTableViewCell else {
+            fatalError("Unable to dequeue UserPostTableViewCell")
+        }
+        
+        cell.configure(with: viewModel.userPosts?[indexPath.row])
+        return cell
+    }
+}
+
+extension UserPostsViewController : UserPostsViewModelDelegate {
+    
+    func presentUserPosts() {
+    
+        DispatchQueue.main.async {
+            
+            self.userPostsView.tableView.reloadData()
+
+        }
+    }
+    
+    func presentFailureScreen() {
+        
+    }
 }

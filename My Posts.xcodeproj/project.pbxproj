@@ -21,6 +21,8 @@
 		8596A6F12AA5FD190071EB2F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6F02AA5FD190071EB2F /* UserManager.swift */; };
 		8596A6F32AA602B00071EB2F /* UserPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6F22AA602B00071EB2F /* UserPostsViewController.swift */; };
 		8596A6F52AA604110071EB2F /* UserPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6F42AA604110071EB2F /* UserPostsViewModel.swift */; };
+		8596A6F72AA612450071EB2F /* UserPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6F62AA612450071EB2F /* UserPostsView.swift */; };
+		8596A6F92AA6130A0071EB2F /* UserPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6F82AA6130A0071EB2F /* UserPostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		8596A6F02AA5FD190071EB2F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		8596A6F22AA602B00071EB2F /* UserPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsViewController.swift; sourceTree = "<group>"; };
 		8596A6F42AA604110071EB2F /* UserPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsViewModel.swift; sourceTree = "<group>"; };
+		8596A6F62AA612450071EB2F /* UserPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsView.swift; sourceTree = "<group>"; };
+		8596A6F82AA6130A0071EB2F /* UserPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,8 @@
 		8596A6DE2AA5E0830071EB2F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8596A6F62AA612450071EB2F /* UserPostsView.swift */,
+				8596A6F82AA6130A0071EB2F /* UserPostTableViewCell.swift */,
 				8596A6F22AA602B00071EB2F /* UserPostsViewController.swift */,
 			);
 			path = View;
@@ -276,8 +282,10 @@
 				8596A6E72AA5EEA10071EB2F /* LoginViewController.swift in Sources */,
 				8596A6E12AA5E2AF0071EB2F /* NetworkManager.swift in Sources */,
 				8596A6E52AA5E5670071EB2F /* UserPost.swift in Sources */,
+				8596A6F72AA612450071EB2F /* UserPostsView.swift in Sources */,
 				8596A6E32AA5E4930071EB2F /* NetworkManager + UserPosts.swift in Sources */,
 				85854F1D2AA5DBBA0032A3AB /* AppDelegate.swift in Sources */,
+				8596A6F92AA6130A0071EB2F /* UserPostTableViewCell.swift in Sources */,
 				8596A6E92AA5EEB10071EB2F /* LoginView.swift in Sources */,
 				85854F272AA5DBBA0032A3AB /* My_Posts.xcdatamodeld in Sources */,
 				8596A6ED2AA5EEE20071EB2F /* User.swift in Sources */,

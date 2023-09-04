@@ -8,13 +8,13 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     private let viewModel = LoginViewModel()
     private let loginView = LoginView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loginView.delegate = self
         viewModel.loginViewModelDelegate = self
     }
@@ -41,7 +41,7 @@ extension LoginViewController: LoginViewModelDelegate {
         
         let navigationController = UINavigationController(rootViewController: userPostsViewController)
         navigationController.navigationBar.prefersLargeTitles = true
-
+        
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             
             appDelegate.window?.rootViewController = navigationController
