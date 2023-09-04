@@ -74,6 +74,14 @@ class LoginView: UIView {
         
         delegate?.loginButtonTapped(userID: userID)
     }
+    
+    private func setupObservers() {
+        
+         userIDTextField.addTarget(self, action: #selector(userIDTextFieldDidChange), for: .editingChanged)
+     }
+
+     @objc private func userIDTextFieldDidChange() {
+      
+         loginButton.isEnabled = !( userIDTextField.text ?? "" ).isEmpty
+     }
 }
-
-
