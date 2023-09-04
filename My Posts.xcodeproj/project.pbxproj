@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		85854F1D2AA5DBBA0032A3AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85854F1C2AA5DBBA0032A3AB /* AppDelegate.swift */; };
-		85854F212AA5DBBA0032A3AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85854F202AA5DBBA0032A3AB /* ViewController.swift */; };
 		85854F272AA5DBBA0032A3AB /* My_Posts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85854F252AA5DBBA0032A3AB /* My_Posts.xcdatamodeld */; };
 		85854F292AA5DBBB0032A3AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85854F282AA5DBBB0032A3AB /* Assets.xcassets */; };
 		85854F2C2AA5DBBB0032A3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85854F2A2AA5DBBB0032A3AB /* LaunchScreen.storyboard */; };
 		8596A6E12AA5E2AF0071EB2F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6E02AA5E2AF0071EB2F /* NetworkManager.swift */; };
 		8596A6E32AA5E4930071EB2F /* NetworkManager + UserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6E22AA5E4930071EB2F /* NetworkManager + UserPosts.swift */; };
 		8596A6E52AA5E5670071EB2F /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6E42AA5E5670071EB2F /* UserPost.swift */; };
+		8596A6E72AA5EEA10071EB2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6E62AA5EEA10071EB2F /* LoginViewController.swift */; };
+		8596A6E92AA5EEB10071EB2F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6E82AA5EEB10071EB2F /* LoginView.swift */; };
+		8596A6EB2AA5EEC70071EB2F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6EA2AA5EEC70071EB2F /* LoginViewModel.swift */; };
+		8596A6ED2AA5EEE20071EB2F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6EC2AA5EEE20071EB2F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		85854F192AA5DBBA0032A3AB /* My Posts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Posts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85854F1C2AA5DBBA0032A3AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85854F202AA5DBBA0032A3AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85854F262AA5DBBA0032A3AB /* My_Posts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Posts.xcdatamodel; sourceTree = "<group>"; };
 		85854F282AA5DBBB0032A3AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85854F2B2AA5DBBB0032A3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +30,10 @@
 		8596A6E02AA5E2AF0071EB2F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8596A6E22AA5E4930071EB2F /* NetworkManager + UserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager + UserPosts.swift"; sourceTree = "<group>"; };
 		8596A6E42AA5E5670071EB2F /* UserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
+		8596A6E62AA5EEA10071EB2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8596A6E82AA5EEB10071EB2F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8596A6EA2AA5EEC70071EB2F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8596A6EC2AA5EEE20071EB2F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +69,6 @@
 				85854F1C2AA5DBBA0032A3AB /* AppDelegate.swift */,
 				85854F332AA5DC770032A3AB /* Interface */,
 				85854F342AA5DC820032A3AB /* Infrastructure */,
-				85854F202AA5DBBA0032A3AB /* ViewController.swift */,
 				85854F2D2AA5DBBB0032A3AB /* Info.plist */,
 				85854F252AA5DBBA0032A3AB /* My_Posts.xcdatamodeld */,
 				85854F2A2AA5DBBB0032A3AB /* LaunchScreen.storyboard */,
@@ -129,6 +134,7 @@
 		8596A6DA2AA5E04B0071EB2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8596A6EC2AA5EEE20071EB2F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 		8596A6DB2AA5E0580071EB2F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8596A6E62AA5EEA10071EB2F /* LoginViewController.swift */,
+				8596A6E82AA5EEB10071EB2F /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 		8596A6DC2AA5E05F0071EB2F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8596A6EA2AA5EEC70071EB2F /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -239,12 +248,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8596A6E72AA5EEA10071EB2F /* LoginViewController.swift in Sources */,
 				8596A6E12AA5E2AF0071EB2F /* NetworkManager.swift in Sources */,
-				85854F212AA5DBBA0032A3AB /* ViewController.swift in Sources */,
 				8596A6E52AA5E5670071EB2F /* UserPost.swift in Sources */,
 				8596A6E32AA5E4930071EB2F /* NetworkManager + UserPosts.swift in Sources */,
 				85854F1D2AA5DBBA0032A3AB /* AppDelegate.swift in Sources */,
+				8596A6E92AA5EEB10071EB2F /* LoginView.swift in Sources */,
 				85854F272AA5DBBA0032A3AB /* My_Posts.xcdatamodeld in Sources */,
+				8596A6ED2AA5EEE20071EB2F /* User.swift in Sources */,
+				8596A6EB2AA5EEC70071EB2F /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
