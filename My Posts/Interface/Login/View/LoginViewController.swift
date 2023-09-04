@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         loginView.delegate = self
+        viewModel.loginViewModelDelegate = self
     }
     
     override func loadView() {
@@ -28,6 +29,20 @@ extension LoginViewController: LoginViewDelegate {
     
     func loginButtonTapped(userID: String) {
         
-        viewModel.setUser(userID: userID)
+        viewModel.save(userID: userID)
+    }
+}
+
+extension LoginViewController: LoginViewModelDelegate {
+    
+    func presentLoginSuccessful() {
+        
+        
+    }
+    
+    func presentLoginFailure() {
+        
+        /* TO handle failure scenario*/
+        
     }
 }

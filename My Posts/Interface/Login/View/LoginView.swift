@@ -61,7 +61,7 @@ class LoginView: UIView {
             
             loginButton.topAnchor.constraint(equalTo: userIDTextField.bottomAnchor, constant: 16),
             loginButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            loginButton.widthAnchor.constraint(equalToConstant: 120), // Set the desired width
+            loginButton.widthAnchor.constraint(equalToConstant: 120), 
             loginButton.heightAnchor.constraint(equalToConstant: 40)
         ])
 

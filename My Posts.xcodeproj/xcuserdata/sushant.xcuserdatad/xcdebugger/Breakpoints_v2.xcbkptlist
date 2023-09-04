@@ -190,42 +190,10 @@
             filePath = "My Posts/Interface/Login/View/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "loginButtonTapped(userID:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CEB9C9DE-5949-4740-8C30-3142EE8C94FF - 9b712c6c836b7bbc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.LoginViewController.loginButtonTapped(userID: Swift.String) -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Login/View/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "CEB9C9DE-5949-4740-8C30-3142EE8C94FF - 9b712c6c836b7bbc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.LoginViewController.loginButtonTapped(userID: Swift.String) -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Login/View/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

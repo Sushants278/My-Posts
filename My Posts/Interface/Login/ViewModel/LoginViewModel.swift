@@ -7,16 +7,19 @@
 
 import Foundation
 
+protocol LoginViewModelDelegate: AnyObject {
+    
+    func presentLoginSuccessful()
+    func presentLoginFailure()
+}
+
 class LoginViewModel {
     
-    private var userModel: User?
-
-    var userID: String {
-        return userModel?.userID ?? ""
-    }
-
-    func setUser(userID: String) {
+    weak var loginViewModelDelegate: LoginViewModelDelegate?
+    
+    func save(userID: String) {
         
-        userModel = User(userID: userID)
+        UserManager.shared.saveUserID(userID)
+        loginViewModelDelegate?.presentLoginSuccessful()
     }
 }
