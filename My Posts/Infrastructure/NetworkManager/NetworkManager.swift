@@ -15,11 +15,16 @@ enum NetworkError: Error {
 
 class NetworkManager {
     
+    static let shared = NetworkManager()
+    
+    private init() {}
+    
     var urlComponents: URLComponents {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "jsonplaceholder.typicode.com"
+        urlComponents.queryItems = []
         return urlComponents
     }
     
@@ -29,22 +34,26 @@ class NetworkManager {
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             
-            if let error = error {
+            if let _ = error {
+                
                 completion?(nil, NetworkError.invalidData)
                 return
             }
             
             guard let data = data else {
+                
                 completion?(nil, NetworkError.invalidData)
                 return
             }
             
             if let decodedResponse = try? JSONDecoder().decode(T.self, from: data) {
+                
                 DispatchQueue.main.async {
                     
                     completion?(decodedResponse, nil)
                 }
             } else {
+                
                 completion?(nil, NetworkError.invalidData)
             }
             

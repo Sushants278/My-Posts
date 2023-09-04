@@ -14,6 +14,7 @@
 		85854F2C2AA5DBBB0032A3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85854F2A2AA5DBBB0032A3AB /* LaunchScreen.storyboard */; };
 		8596A6E12AA5E2AF0071EB2F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6E02AA5E2AF0071EB2F /* NetworkManager.swift */; };
 		8596A6E32AA5E4930071EB2F /* NetworkManager + UserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6E22AA5E4930071EB2F /* NetworkManager + UserPosts.swift */; };
+		8596A6E52AA5E5670071EB2F /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6E42AA5E5670071EB2F /* UserPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		85854F2D2AA5DBBB0032A3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8596A6E02AA5E2AF0071EB2F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8596A6E22AA5E4930071EB2F /* NetworkManager + UserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager + UserPosts.swift"; sourceTree = "<group>"; };
+		8596A6E42AA5E5670071EB2F /* UserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		8596A6DD2AA5E0780071EB2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8596A6E42AA5E5670071EB2F /* UserPost.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				8596A6E12AA5E2AF0071EB2F /* NetworkManager.swift in Sources */,
 				85854F212AA5DBBA0032A3AB /* ViewController.swift in Sources */,
+				8596A6E52AA5E5670071EB2F /* UserPost.swift in Sources */,
 				8596A6E32AA5E4930071EB2F /* NetworkManager + UserPosts.swift in Sources */,
 				85854F1D2AA5DBBA0032A3AB /* AppDelegate.swift in Sources */,
 				85854F272AA5DBBA0032A3AB /* My_Posts.xcdatamodeld in Sources */,
