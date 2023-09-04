@@ -37,7 +37,15 @@ extension LoginViewController: LoginViewModelDelegate {
     
     func presentLoginSuccessful() {
         
+        let userPostsViewController = UserPostsViewController()
         
+        let navigationController = UINavigationController(rootViewController: userPostsViewController)
+        navigationController.navigationBar.prefersLargeTitles = true
+
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            
+            appDelegate.window?.rootViewController = navigationController
+        }
     }
     
     func presentLoginFailure() {
