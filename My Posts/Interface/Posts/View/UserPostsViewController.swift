@@ -61,9 +61,26 @@ extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let userPost = viewModel.userPosts?[indexPath.row] else {
+            
+            return
+        }
+        
+        didTapOnPostCell(userPost: userPost)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         60.0
+    }
+    
+    func didTapOnPostCell(userPost: UserPost) {
+        
+        let viewModel = UserCommentsViewModel(userPost: userPost)
+        let userCommentsVC = UserCommentsViewController(viewModel: viewModel)
+        self.navigationController?.pushViewController(userCommentsVC, animated: true)
     }
 }
 

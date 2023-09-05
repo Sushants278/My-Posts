@@ -29,6 +29,7 @@
 		8596A70D2AA75D5D0071EB2F /* UserComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A70C2AA75D5D0071EB2F /* UserComment.swift */; };
 		8596A70F2AA75DF50071EB2F /* NetworkManager + UserComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A70E2AA75DF50071EB2F /* NetworkManager + UserComments.swift */; };
 		8596A7112AA75EB90071EB2F /* UserCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7102AA75EB90071EB2F /* UserCommentsViewController.swift */; };
+		8596A7132AA761610071EB2F /* UserCommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7122AA761610071EB2F /* UserCommentsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		8596A70C2AA75D5D0071EB2F /* UserComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComment.swift; sourceTree = "<group>"; };
 		8596A70E2AA75DF50071EB2F /* NetworkManager + UserComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager + UserComments.swift"; sourceTree = "<group>"; };
 		8596A7102AA75EB90071EB2F /* UserCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsViewController.swift; sourceTree = "<group>"; };
+		8596A7122AA761610071EB2F /* UserCommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 		8596A70B2AA75BD90071EB2F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8596A7122AA761610071EB2F /* UserCommentsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				8596A70F2AA75DF50071EB2F /* NetworkManager + UserComments.swift in Sources */,
 				8596A6FB2AA628D30071EB2F /* UserPostsHeaderView.swift in Sources */,
+				8596A7132AA761610071EB2F /* UserCommentsViewModel.swift in Sources */,
 				8596A7112AA75EB90071EB2F /* UserCommentsViewController.swift in Sources */,
 				8596A6E72AA5EEA10071EB2F /* LoginViewController.swift in Sources */,
 				8596A6E12AA5E2AF0071EB2F /* NetworkManager.swift in Sources */,
