@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol UserPostsViewModelDelegate: AnyObject {
     
@@ -32,6 +33,39 @@ class UserPostsViewModel {
                 self.userPosts = userPosts
                 self.userPostsViewModelDelegate?.presentUserPosts()
             }
+        }
+    }
+    
+    func saveToFavorites(userPost: UserPost) {
+        
+    
+        let context = CoreDataStackManager.shared.managedObjectContext
+        
+        if let userPostEntity = NSEntityDescription.entity(forEntityName: "FavoritePost", in: context),
+           let userPostOfflineObject = NSManagedObject(entity: userPostEntity, insertInto: context) as? FavoritePost {
+            
+            userPostOfflineObject.title = userPost.title
+            userPostOfflineObject.body = userPost.body
+            userPostOfflineObject.userId = String(userPost.userID)
+            userPostOfflineObject.id = String(userPost.id)
+            
+            CoreDataStackManager.shared.saveContext()
+        }
+    }
+    
+    func fetchAndPrintEachPerson() {
+        
+        let context = CoreDataStackManager.shared.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest<FavoritePost>(entityName: "FavoritePost")
+        do {
+            let fetchedResults = try context.fetch(fetchRequest)
+            for item in fetchedResults {
+                print(item.value(forKey: "title"))
+            }
+        } catch let error as NSError {
+            // something went wrong, print the error.
+            print(error.description)
         }
     }
 }

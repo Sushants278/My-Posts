@@ -7,19 +7,32 @@
 
 import UIKit
 
+protocol UserPostTableViewDelegate: AnyObject {
+    
+    func didTapFavouriteButton(userPost: UserPost)
+}
+
 class UserPostTableViewCell: UITableViewCell {
     
+     private var userPost: UserPost?
+     weak var delegate: UserPostTableViewDelegate?
     
     // MARK: - UI Elements
     
-    let postLabel: UILabel = {
+    let postTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0 
+        label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    let favouriteButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .red
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,20 +48,49 @@ class UserPostTableViewCell: UITableViewCell {
     
     private func setupUI() {
         
-    contentView.addSubview(postLabel)
+        contentView.addSubview(postTitleLabel)
+        contentView.addSubview(favouriteButton)
         
-       NSLayoutConstraint.activate([
-            postLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            postLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            postLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            postLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+        self.selectionStyle = .none
+        
+        let filledHeartImage = UIImage(systemName: "heart.fill")
+        let unfilledHeartImage = UIImage(systemName: "heart")
+        
+        favouriteButton.setImage(unfilledHeartImage, for: .normal)
+        favouriteButton.setImage(filledHeartImage, for: .selected)
+        
+        favouriteButton.addTarget(self, action: #selector(favouriteButtonTapped), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            
+            postTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            postTitleLabel.trailingAnchor.constraint(equalTo: favouriteButton.leadingAnchor, constant: -16),
+            postTitleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            
+            favouriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            favouriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            favouriteButton.widthAnchor.constraint(equalToConstant: 35),
+            favouriteButton.heightAnchor.constraint(equalToConstant: 35)
         ])
     }
     
     // MARK: - Configure Cell
     
-    func configure(with userPost: UserPost?) {
+    func configure(with userPost: UserPost) {
         
-        postLabel.text = userPost?.title
+        self.userPost = userPost
+        postTitleLabel.text = userPost.title
+        favouriteButton.isSelected = false
+    }
+    
+    @objc private func favouriteButtonTapped() {
+        
+        guard let userPost = self.userPost else {
+            
+            return
+        }
+        
+        favouriteButton.isSelected.toggle()
+        delegate?.didTapFavouriteButton(userPost: userPost)
     }
 }

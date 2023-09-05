@@ -23,6 +23,8 @@
 		8596A6F52AA604110071EB2F /* UserPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6F42AA604110071EB2F /* UserPostsViewModel.swift */; };
 		8596A6F72AA612450071EB2F /* UserPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6F62AA612450071EB2F /* UserPostsView.swift */; };
 		8596A6F92AA6130A0071EB2F /* UserPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6F82AA6130A0071EB2F /* UserPostTableViewCell.swift */; };
+		8596A6FB2AA628D30071EB2F /* UserPostsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6FA2AA628D30071EB2F /* UserPostsHeaderView.swift */; };
+		8596A6FE2AA649130071EB2F /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6FD2AA649130071EB2F /* CoreDataStackManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		8596A6F42AA604110071EB2F /* UserPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsViewModel.swift; sourceTree = "<group>"; };
 		8596A6F62AA612450071EB2F /* UserPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsView.swift; sourceTree = "<group>"; };
 		8596A6F82AA6130A0071EB2F /* UserPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostTableViewCell.swift; sourceTree = "<group>"; };
+		8596A6FA2AA628D30071EB2F /* UserPostsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsHeaderView.swift; sourceTree = "<group>"; };
+		8596A6FD2AA649130071EB2F /* CoreDataStackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 			children = (
 				8596A6F62AA612450071EB2F /* UserPostsView.swift */,
 				8596A6F82AA6130A0071EB2F /* UserPostTableViewCell.swift */,
+				8596A6FA2AA628D30071EB2F /* UserPostsHeaderView.swift */,
 				8596A6F22AA602B00071EB2F /* UserPostsViewController.swift */,
 			);
 			path = View;
@@ -195,6 +200,7 @@
 		8596A6EE2AA5FCFB0071EB2F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				8596A6FC2AA648E70071EB2F /* CoreDataManager */,
 				8596A6EF2AA5FD050071EB2F /* UserManager */,
 				85854F382AA5DD380032A3AB /* NetworkManager */,
 			);
@@ -207,6 +213,14 @@
 				8596A6F02AA5FD190071EB2F /* UserManager.swift */,
 			);
 			path = UserManager;
+			sourceTree = "<group>";
+		};
+		8596A6FC2AA648E70071EB2F /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8596A6FD2AA649130071EB2F /* CoreDataStackManager.swift */,
+			);
+			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8596A6FB2AA628D30071EB2F /* UserPostsHeaderView.swift in Sources */,
 				8596A6E72AA5EEA10071EB2F /* LoginViewController.swift in Sources */,
 				8596A6E12AA5E2AF0071EB2F /* NetworkManager.swift in Sources */,
 				8596A6E52AA5E5670071EB2F /* UserPost.swift in Sources */,
@@ -287,6 +302,7 @@
 				85854F1D2AA5DBBA0032A3AB /* AppDelegate.swift in Sources */,
 				8596A6F92AA6130A0071EB2F /* UserPostTableViewCell.swift in Sources */,
 				8596A6E92AA5EEB10071EB2F /* LoginView.swift in Sources */,
+				8596A6FE2AA649130071EB2F /* CoreDataStackManager.swift in Sources */,
 				85854F272AA5DBBA0032A3AB /* My_Posts.xcdatamodeld in Sources */,
 				8596A6ED2AA5EEE20071EB2F /* User.swift in Sources */,
 				8596A6F12AA5FD190071EB2F /* UserManager.swift in Sources */,
