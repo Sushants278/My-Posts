@@ -12,6 +12,7 @@ protocol UserPostsViewModelDelegate: AnyObject {
     
     func presentUserPosts()
     func presentFailureScreen()
+    func presentUpdatedUserPosts(indexPath: IndexPath)
 }
 
 class UserPostsViewModel {
@@ -75,7 +76,8 @@ class UserPostsViewModel {
             }
         }
         
-        self.userPostsViewModelDelegate?.presentUserPosts()
+         let indexPath = self.indexPathForUserPost(userPost) ?? IndexPath(row: 0, section: 0)
+         self.userPostsViewModelDelegate?.presentUpdatedUserPosts(indexPath: indexPath)
     }
 
 
@@ -161,4 +163,15 @@ class UserPostsViewModel {
             }
         }
     }
+    
+    func indexPathForUserPost(_ userPost: UserPost) -> IndexPath? {
+        
+       if let rowIndex = self.userPosts?.firstIndex(where: { $0.id == userPost.id }) {
+            
+          return IndexPath(row: rowIndex, section: 0)
+       }
+
+        return nil
+    }
+    
 }

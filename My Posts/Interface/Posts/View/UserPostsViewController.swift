@@ -69,6 +69,17 @@ extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension UserPostsViewController : UserPostsViewModelDelegate {
     
+    
+    func presentUpdatedUserPosts(indexPath: IndexPath) {
+        
+        DispatchQueue.main.async {
+            
+            self.userPostsView.tableView.reloadRows(at: [indexPath], with: .none)
+        }
+        
+    }
+    
+    
     func presentUserPosts() {
         
         DispatchQueue.main.async {
