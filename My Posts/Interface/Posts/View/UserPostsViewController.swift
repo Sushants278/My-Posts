@@ -86,7 +86,7 @@ extension UserPostsViewController : UserPostsViewModelDelegate {
             
             self.userPostsView.tableView.reloadData()
         }
-    
+        
     }
     
     func presentFailureScreen() {
@@ -98,6 +98,8 @@ extension UserPostsViewController : HeaderViewDelegate {
     
     func segmentedControlValueChanged(_ selectedIndex: Int) {
         
+        let isShowFavortie = selectedIndex != 0
+        viewModel.showAllOrFavoriteUserPosts(isShowFavortie: isShowFavortie)
     }
 }
 

@@ -19,6 +19,8 @@ class UserPostsViewModel {
     
     weak var userPostsViewModelDelegate: UserPostsViewModelDelegate?
     var userPosts: UserPosts?
+    private var mainUserPosts: UserPosts?
+    private var isShowAllUserPosts = true
     
     func fetchUserPosts() {
         
@@ -35,15 +37,14 @@ class UserPostsViewModel {
                 
                 self.userPostsViewModelDelegate?.presentFailureScreen()
             } else {
-                
-                self.userPosts = userPosts
+                self.mainUserPosts = userPosts
                 self.parseUserPosts()
             }
         }
     }
     
     func parseUserPosts() {
-        if let userPosts = self.userPosts {
+        if let userPosts = self.mainUserPosts {
             let parsedUserPosts = userPosts.map { item in
                 return UserPost(
                     userID: item.userID,
@@ -54,11 +55,37 @@ class UserPostsViewModel {
                 )
             }
             self.userPosts = parsedUserPosts
+            self.isShowAllUserPosts = true
             self.userPostsViewModelDelegate?.presentUserPosts()
         }
     }
 
+    func showAllOrFavoriteUserPosts(isShowFavortie : Bool) {
+                
+        if !isShowFavortie {
+    
+            parseUserPosts()
+        } else {
+            
+            self.isShowAllUserPosts = false
+            self.userPosts = getAllFavoritedPosts()
+            self.userPostsViewModelDelegate?.presentUserPosts()
+        }
+        
+    }
+    
     func favoritePost(userPost: UserPost) {
+        
+        if isShowAllUserPosts {
+            
+            removeFavoritePostFromAllList(userPost: userPost)
+        } else {
+            
+            removeFavoritePostFromFavoriteList(userPost: userPost)
+        }
+    }
+
+    func removeFavoritePostFromAllList(userPost: UserPost) {
         
         if !(userPost.isFavorite ?? false) {
             
@@ -76,10 +103,16 @@ class UserPostsViewModel {
             }
         }
         
-         let indexPath = self.indexPathForUserPost(userPost) ?? IndexPath(row: 0, section: 0)
-         self.userPostsViewModelDelegate?.presentUpdatedUserPosts(indexPath: indexPath)
+        let indexPath = self.indexPathForUserPost(userPost) ?? IndexPath(row: 0, section: 0)
+        self.userPostsViewModelDelegate?.presentUpdatedUserPosts(indexPath: indexPath)
     }
-
+    
+    func removeFavoritePostFromFavoriteList(userPost: UserPost) {
+        
+        removeFavorite(userId: userPost.userID, postId: userPost.id)
+        self.userPosts = getAllFavoritedPosts()
+        self.userPostsViewModelDelegate?.presentUserPosts()
+    }
 
     func saveToFavorites(userPost: UserPost) {
     

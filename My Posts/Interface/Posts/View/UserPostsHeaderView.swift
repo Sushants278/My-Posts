@@ -48,6 +48,7 @@ class UserPostsHeaderView: UIView {
     }
     
     @objc private func segmentedControlValueChanged() {
+        
         delegate?.segmentedControlValueChanged(segmentedControl.selectedSegmentIndex)
     }
 }
