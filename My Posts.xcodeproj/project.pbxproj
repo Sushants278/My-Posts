@@ -26,6 +26,9 @@
 		8596A6FB2AA628D30071EB2F /* UserPostsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6FA2AA628D30071EB2F /* UserPostsHeaderView.swift */; };
 		8596A6FE2AA649130071EB2F /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6FD2AA649130071EB2F /* CoreDataStackManager.swift */; };
 		8596A7082AA74FB00071EB2F /* UserPostsNoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7072AA74FB00071EB2F /* UserPostsNoDataView.swift */; };
+		8596A70D2AA75D5D0071EB2F /* UserComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A70C2AA75D5D0071EB2F /* UserComment.swift */; };
+		8596A70F2AA75DF50071EB2F /* NetworkManager + UserComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A70E2AA75DF50071EB2F /* NetworkManager + UserComments.swift */; };
+		8596A7112AA75EB90071EB2F /* UserCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7102AA75EB90071EB2F /* UserCommentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		8596A6FA2AA628D30071EB2F /* UserPostsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsHeaderView.swift; sourceTree = "<group>"; };
 		8596A6FD2AA649130071EB2F /* CoreDataStackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		8596A7072AA74FB00071EB2F /* UserPostsNoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsNoDataView.swift; sourceTree = "<group>"; };
+		8596A70C2AA75D5D0071EB2F /* UserComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComment.swift; sourceTree = "<group>"; };
+		8596A70E2AA75DF50071EB2F /* NetworkManager + UserComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager + UserComments.swift"; sourceTree = "<group>"; };
+		8596A7102AA75EB90071EB2F /* UserCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 		85854F372AA5DD010032A3AB /* Comments */ = {
 			isa = PBXGroup;
 			children = (
+				8596A7092AA75BCB0071EB2F /* Model */,
+				8596A70A2AA75BD30071EB2F /* View */,
+				8596A70B2AA75BD90071EB2F /* ViewModel */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -143,6 +152,7 @@
 			children = (
 				8596A6E02AA5E2AF0071EB2F /* NetworkManager.swift */,
 				8596A6E22AA5E4930071EB2F /* NetworkManager + UserPosts.swift */,
+				8596A70E2AA75DF50071EB2F /* NetworkManager + UserComments.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -226,6 +236,29 @@
 			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
+		8596A7092AA75BCB0071EB2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8596A70C2AA75D5D0071EB2F /* UserComment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8596A70A2AA75BD30071EB2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8596A7102AA75EB90071EB2F /* UserCommentsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8596A70B2AA75BD90071EB2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -296,7 +329,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8596A70F2AA75DF50071EB2F /* NetworkManager + UserComments.swift in Sources */,
 				8596A6FB2AA628D30071EB2F /* UserPostsHeaderView.swift in Sources */,
+				8596A7112AA75EB90071EB2F /* UserCommentsViewController.swift in Sources */,
 				8596A6E72AA5EEA10071EB2F /* LoginViewController.swift in Sources */,
 				8596A6E12AA5E2AF0071EB2F /* NetworkManager.swift in Sources */,
 				8596A6E52AA5E5670071EB2F /* UserPost.swift in Sources */,
@@ -308,6 +343,7 @@
 				8596A6FE2AA649130071EB2F /* CoreDataStackManager.swift in Sources */,
 				8596A7082AA74FB00071EB2F /* UserPostsNoDataView.swift in Sources */,
 				85854F272AA5DBBA0032A3AB /* My_Posts.xcdatamodeld in Sources */,
+				8596A70D2AA75D5D0071EB2F /* UserComment.swift in Sources */,
 				8596A6ED2AA5EEE20071EB2F /* User.swift in Sources */,
 				8596A6F12AA5FD190071EB2F /* UserManager.swift in Sources */,
 				8596A6F32AA602B00071EB2F /* UserPostsViewController.swift in Sources */,
