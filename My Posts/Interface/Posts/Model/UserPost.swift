@@ -13,6 +13,7 @@ typealias UserPosts = [UserPost]
 struct UserPost: Codable {
     let userID, id: Int
     let title, body: String
+    var isFavorite: Bool?
 
     enum CodingKeys: String, CodingKey {
         case userID = "userId"

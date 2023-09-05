@@ -199,240 +199,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "39F8D9ED-E78C-4490-88A6-D9CFD9BA53F0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "fetchUserPosts()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "39F8D9ED-E78C-4490-88A6-D9CFD9BA53F0 - 76ceb20a97bb3f27"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "188">
-               </Location>
-               <Location
-                  uuid = "39F8D9ED-E78C-4490-88A6-D9CFD9BA53F0 - 76ceb20a97bb3f44"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "39F8D9ED-E78C-4490-88A6-D9CFD9BA53F0 - 76ceb20a97bb3f27"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D01B9860-F718-4E71-81AA-69534AE974DE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "fetchUserPosts()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D01B9860-F718-4E71-81AA-69534AE974DE - 76ceb20a97bb3f65"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  uuid = "D01B9860-F718-4E71-81AA-69534AE974DE - f326beca3b911f47"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "232">
-               </Location>
-               <Location
-                  uuid = "D01B9860-F718-4E71-81AA-69534AE974DE - 76ceb20a97bb3f44"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "D01B9860-F718-4E71-81AA-69534AE974DE - f326beca3b911f98"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "232">
-               </Location>
-               <Location
-                  uuid = "D01B9860-F718-4E71-81AA-69534AE974DE - 76ceb20a97bb3f27"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "68E37187-3F4E-4256-9221-9277DAD214A2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "fetchUserPosts()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "68E37187-3F4E-4256-9221-9277DAD214A2 - f326beca3b911f26"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "232">
-               </Location>
-               <Location
-                  uuid = "68E37187-3F4E-4256-9221-9277DAD214A2 - 76ceb20a97bb3f65"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  uuid = "68E37187-3F4E-4256-9221-9277DAD214A2 - f326beca3b911f05"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "68E37187-3F4E-4256-9221-9277DAD214A2 - f326beca3b911f26"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4F3C9546-3869-4028-8BBF-A0AF3E3808B8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -513,54 +279,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "00BF96B1-C79C-49DD-8288-594E06033049"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "fetchUserPosts()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "00BF96B1-C79C-49DD-8288-594E06033049 - 76ceb20a97bb3e82"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  uuid = "00BF96B1-C79C-49DD-8288-594E06033049 - 76ceb20a97bb3e6d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserPostsViewModel.fetchUserPosts() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "128">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "5553C242-6F8F-4CC7-B578-29ABE5837DE2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -568,8 +286,8 @@
             filePath = "My Posts/Interface/Posts/View/UserPostsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -661,8 +379,8 @@
             filePath = "My Posts/Interface/Posts/View/UserPostsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -677,8 +395,8 @@
             filePath = "My Posts/Interface/Posts/View/UserPostsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "loadView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -697,6 +415,38 @@
             endingLineNumber = "44"
             landmarkName = "init?(coder:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "98DA53EE-B921-4111-9ED3-F039FD43C0FB - 948075ffe84989ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;My_Posts.UserPostTableViewCell&gt;"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/View/UserPostTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "98DA53EE-B921-4111-9ED3-F039FD43C0FB - 948075ffe84989ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;My_Posts.UserPostTableViewCell&gt;"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/View/UserPostTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "376">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -709,42 +459,10 @@
             filePath = "My Posts/Interface/Posts/View/UserPostsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "segmentedControlValueChanged(_:)"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "F83E2E19-6BBB-483A-B1D6-9E81344A3B0A - b43c27dbbe8104af"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewController.segmentedControlValueChanged(Swift.Int) -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/View/UserPostsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "F83E2E19-6BBB-483A-B1D6-9E81344A3B0A - b43c27dbbe810b4e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewController.segmentedControlValueChanged(Swift.Int) -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/View/UserPostsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -805,10 +523,42 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "saveToFavorites(userPost:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "getAllFavoritedPosts()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7D00E745-8710-478B-8A7C-AF7F122B7884 - 6ced4e6dd8de11f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostsViewModel.saveToFavorites(userPost: My_Posts.UserPost) -&gt; ()"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "640">
+               </Location>
+               <Location
+                  uuid = "7D00E745-8710-478B-8A7C-AF7F122B7884 - 6ced4e6dd8de11f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostsViewModel.saveToFavorites(userPost: My_Posts.UserPost) -&gt; ()"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -821,42 +571,10 @@
             filePath = "My Posts/Interface/Posts/View/UserPostsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "UserPostsViewController"
-            landmarkType = "21">
-            <Locations>
-               <Location
-                  uuid = "EC4DF46B-5BA1-4CC9-AD20-948146B3433B - 8d6fd301ae4b4992"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewController.didTapFavouriteButton(userPost: Swift.Optional&lt;My_Posts.UserPost&gt;) -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/View/UserPostsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "EC4DF46B-5BA1-4CC9-AD20-948146B3433B - 8d6fd301ae4b4992"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewController.didTapFavouriteButton(userPost: Swift.Optional&lt;My_Posts.UserPost&gt;) -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/View/UserPostsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "didTapFavouriteButton(userPost:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -869,40 +587,40 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "saveToFavorites(userPost:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "getAllFavoritedPosts()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6B0E7225-459A-4DCB-8810-FD3CB5CE8F21 - 9708f985f53325a7"
+                  uuid = "6B0E7225-459A-4DCB-8810-FD3CB5CE8F21 - 6ced4e6dd8de1696"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.saveToFavorites(userPost: Swift.Optional&lt;My_Posts.UserPost&gt;) -&gt; ()"
+                  symbolName = "My_Posts.UserPostsViewModel.saveToFavorites(userPost: My_Posts.UserPost) -&gt; ()"
                   moduleName = "My Posts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "540">
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "896">
                </Location>
                <Location
-                  uuid = "6B0E7225-459A-4DCB-8810-FD3CB5CE8F21 - 9708f985f53325a7"
+                  uuid = "6B0E7225-459A-4DCB-8810-FD3CB5CE8F21 - 6ced4e6dd8de1696"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.saveToFavorites(userPost: Swift.Optional&lt;My_Posts.UserPost&gt;) -&gt; ()"
+                  symbolName = "My_Posts.UserPostsViewModel.saveToFavorites(userPost: My_Posts.UserPost) -&gt; ()"
                   moduleName = "My Posts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "536">
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "480">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -917,40 +635,40 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "saveToFavorites(userPost:)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "getAllFavoritedPosts()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EEC451D3-E971-4B04-BD4D-AB2F09736088 - 9708f985f532da40"
+                  uuid = "EEC451D3-E971-4B04-BD4D-AB2F09736088 - a90224ff12eee8b9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.saveToFavorites(userPost: Swift.Optional&lt;My_Posts.UserPost&gt;) -&gt; ()"
+                  symbolName = "My_Posts.UserPostsViewModel.removeFavorite(userId: Swift.Int, postId: Swift.Int) -&gt; ()"
                   moduleName = "My Posts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1148">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "176">
                </Location>
                <Location
-                  uuid = "EEC451D3-E971-4B04-BD4D-AB2F09736088 - 9708f985f532da40"
+                  uuid = "EEC451D3-E971-4B04-BD4D-AB2F09736088 - 6ced4e6dd8de174d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.saveToFavorites(userPost: Swift.Optional&lt;My_Posts.UserPost&gt;) -&gt; ()"
+                  symbolName = "My_Posts.UserPostsViewModel.saveToFavorites(userPost: My_Posts.UserPost) -&gt; ()"
                   moduleName = "My Posts"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "872">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "828">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -969,68 +687,36 @@
             endingLineNumber = "24"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC63704E-0593-4727-95A3-5FE9DB493FC9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "fetchAndPrintEachPerson()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "788A7842-B081-4148-89F3-974C09087F72"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "fetchAndPrintEachPerson()"
-            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "788A7842-B081-4148-89F3-974C09087F72 - ba8bb70da8c4e0f8"
+                  uuid = "0F1A4B5E-D08C-462B-BA68-0DA10C2FF135 - cb8127e092bf6e31"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.fetchAndPrintEachPerson() -&gt; ()"
+                  symbolName = "My_Posts.UserPostsViewController.viewWillAppear(Swift.Bool) -&gt; ()"
                   moduleName = "My Posts"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/View/UserPostsViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "1212">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "104">
                </Location>
                <Location
-                  uuid = "788A7842-B081-4148-89F3-974C09087F72 - ba8bb70da8c4e0d7"
+                  uuid = "0F1A4B5E-D08C-462B-BA68-0DA10C2FF135 - cb8127e092bf6e31"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserPostsViewModel.fetchAndPrintEachPerson() -&gt; ()"
+                  symbolName = "My_Posts.UserPostsViewController.viewWillAppear(Swift.Bool) -&gt; ()"
                   moduleName = "My Posts"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/View/UserPostsViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "244">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "84">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1038,16 +724,160 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3983B162-E6EE-4957-BE7C-14CEE201BD65"
+            uuid = "A41A7EB8-F597-4E30-9F80-87AC5AF3F893"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "fetchAndPrintEachPerson()"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "A41A7EB8-F597-4E30-9F80-87AC5AF3F893 - 8696ccd4b389d337"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostsViewModel.isPostFavorite(userId: Swift.Int, postId: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "452">
+               </Location>
+               <Location
+                  uuid = "A41A7EB8-F597-4E30-9F80-87AC5AF3F893 - 8696ccd4b389d337"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostsViewModel.isPostFavorite(userId: Swift.Int, postId: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D091658-7BC8-4400-9D78-2C49D1FB8961"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "5D091658-7BC8-4400-9D78-2C49D1FB8961 - 2cb3081d5d2a2ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostsViewModel.getAllFavoritedPosts() -&gt; Swift.Array&lt;My_Posts.UserPost&gt;"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "5D091658-7BC8-4400-9D78-2C49D1FB8961 - 8696ccd4b389d228"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostsViewModel.isPostFavorite(userId: Swift.Int, postId: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "452">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2851CA5-A1EB-464A-963A-6A3999DCEE0E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "fetchAndSetFavoritedPosts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B2851CA5-A1EB-464A-963A-6A3999DCEE0E - a90224ff12eeebd6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostsViewModel.removeFavorite(userId: Swift.Int, postId: Swift.Int) -&gt; ()"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "632">
+               </Location>
+               <Location
+                  uuid = "B2851CA5-A1EB-464A-963A-6A3999DCEE0E - a90224ff12eeebd6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "My_Posts.UserPostsViewModel.removeFavorite(userId: Swift.Int, postId: Swift.Int) -&gt; ()"
+                  moduleName = "My Posts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "176">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B02E4D77-450E-4B76-B5EE-9F86EDA967AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "fetchAndSetFavoritedPosts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

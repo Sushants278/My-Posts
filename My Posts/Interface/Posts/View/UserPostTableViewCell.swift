@@ -80,7 +80,7 @@ class UserPostTableViewCell: UITableViewCell {
         
         self.userPost = userPost
         postTitleLabel.text = userPost.title
-        favouriteButton.isSelected = false
+        favouriteButton.isSelected = userPost.isFavorite ?? false
     }
     
     @objc private func favouriteButtonTapped() {

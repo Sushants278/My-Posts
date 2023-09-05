@@ -21,7 +21,6 @@ class UserPostsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         self.viewModel.fetchUserPosts()
-        self.viewModel.fetchAndPrintEachPerson()
     }
     
     override func loadView() {
@@ -71,8 +70,12 @@ extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
 extension UserPostsViewController : UserPostsViewModelDelegate {
     
     func presentUserPosts() {
+        
+        DispatchQueue.main.async {
+            
+            self.userPostsView.tableView.reloadData()
+        }
     
-       self.userPostsView.tableView.reloadData()
     }
     
     func presentFailureScreen() {
@@ -91,6 +94,6 @@ extension UserPostsViewController : UserPostTableViewDelegate {
 
     func didTapFavouriteButton(userPost: UserPost) {
         
-        viewModel.saveToFavorites(userPost: userPost)
+        viewModel.favoritePost(userPost: userPost)
     }
 }

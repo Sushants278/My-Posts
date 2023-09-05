@@ -40,7 +40,6 @@ extension LoginViewController: LoginViewModelDelegate {
         let userPostsViewController = UserPostsViewController()
         
         let navigationController = UINavigationController(rootViewController: userPostsViewController)
-        navigationController.navigationBar.prefersLargeTitles = true
         
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             
