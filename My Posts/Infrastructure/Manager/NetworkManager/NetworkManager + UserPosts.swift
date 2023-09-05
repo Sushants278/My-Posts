@@ -21,8 +21,7 @@ extension NetworkManager: UserPostsRequests {
     func fetchUserPosts(for userID: String, handler: @escaping UserPostsCompletionClosure) {
         
         var urlComponents = self.urlComponents
-        urlComponents.path = "/posts"
-        urlComponents.queryItems?.append(URLQueryItem(name: "users", value: userID))
+        urlComponents.path = "/users/\(userID)/posts"
         
         guard let url = urlComponents.url else {
             

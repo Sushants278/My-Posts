@@ -24,7 +24,6 @@ class NetworkManager {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "jsonplaceholder.typicode.com"
-        urlComponents.queryItems = []
         return urlComponents
     }
     
