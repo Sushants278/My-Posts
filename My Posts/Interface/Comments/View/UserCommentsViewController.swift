@@ -10,6 +10,7 @@ import UIKit
 class UserCommentsViewController: UIViewController {
     
     var viewModel: UserCommentsViewModel?
+    private let userCommentsView = UserCommentsView()
     
     init(viewModel: UserCommentsViewModel? = nil) {
         
@@ -22,11 +23,63 @@ class UserCommentsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        
+        view = userCommentsView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
+        userCommentsView.configureHeaderView(userPost: viewModel?.userPost)
+        self.userCommentsView.tableView.register(UserCommentsTableViewCell.self, forCellReuseIdentifier: "UserCommentsTableViewCell")
+        self.userCommentsView.tableView.dataSource = self
+        self.userCommentsView.tableView.delegate = self
+        self.viewModel?.userPostCommentsViewModelDelegate = self
         self.viewModel?.fetchCommentsForPost()
+    }
+}
+
+extension UserCommentsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        self.viewModel?.comments?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        80.0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserCommentsTableViewCell", for: indexPath) as? UserCommentsTableViewCell, let postComment = viewModel?.comments?[indexPath.row] else {
+            
+            fatalError("Unable to dequeue UserPostTableViewCell")
+        }
+        
+        cell.configure(comment: postComment)
+        return cell
+    }
+}
+
+extension UserCommentsViewController : UserPostCommentsViewModelDelegate {
+    
+    func presentUserPostComments() {
+        
+        DispatchQueue.main.async {
+            
+            self.userCommentsView.tableView.reloadData()
+        }
+        
+    }
+    
+    func presentFailureScreen() {
+        
     }
     
 }
+
+

@@ -83,6 +83,13 @@ class UserPostTableViewCell: UITableViewCell {
         favouriteButton.isSelected = userPost.isFavorite ?? false
     }
     
+    func configure(with postComment: UserComment) {
+        
+        postTitleLabel.text = postComment.body
+        favouriteButton.isHidden = true
+    }
+    
+    
     @objc private func favouriteButtonTapped() {
         
         guard let userPost = self.userPost else {

@@ -905,8 +905,8 @@
             filePath = "My Posts/Interface/Comments/ViewModel/UserCommentsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "fetchCommentsForPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -921,8 +921,8 @@
             filePath = "My Posts/Interface/Comments/ViewModel/UserCommentsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "fetchCommentsForPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -937,8 +937,8 @@
             filePath = "My Posts/Interface/Comments/ViewModel/UserCommentsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "fetchCommentsForPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -953,57 +953,10 @@
             filePath = "My Posts/Interface/Comments/ViewModel/UserCommentsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "fetchCommentsForPost()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "00AFBFA1-5A10-4ADF-B41A-AB10E1BF00F1 - bedcffa2f4d12f4b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Posts.UserCommentsViewModel.fetchCommentsForPost() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Comments/ViewModel/UserCommentsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "00AFBFA1-5A10-4ADF-B41A-AB10E1BF00F1 - bc884f3366a2eb73"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserPost&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserCommentsViewModel.fetchCommentsForPost() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Comments/ViewModel/UserCommentsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "00AFBFA1-5A10-4ADF-B41A-AB10E1BF00F1 - 960ac1ae353c7b49"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;My_Posts.UserComment&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in My_Posts.UserCommentsViewModel.fetchCommentsForPost() -&gt; ()"
-                  moduleName = "My Posts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/Sushant/Code/My%20Posts/My%20Posts/Interface/Comments/ViewModel/UserCommentsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

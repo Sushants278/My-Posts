@@ -8,6 +8,10 @@
 import Foundation
 
 // MARK: - UserComment
+
+
+typealias UserComments = [UserComment]
+
 struct UserComment: Codable {
     let postID, id: Int
     let name, email, body: String
@@ -17,5 +21,3 @@ struct UserComment: Codable {
         case id, name, email, body
     }
 }
-
-typealias UserComments = [UserComment]

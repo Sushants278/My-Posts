@@ -30,6 +30,9 @@
 		8596A70F2AA75DF50071EB2F /* NetworkManager + UserComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A70E2AA75DF50071EB2F /* NetworkManager + UserComments.swift */; };
 		8596A7112AA75EB90071EB2F /* UserCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7102AA75EB90071EB2F /* UserCommentsViewController.swift */; };
 		8596A7132AA761610071EB2F /* UserCommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7122AA761610071EB2F /* UserCommentsViewModel.swift */; };
+		8596A7152AA768B30071EB2F /* UserCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7142AA768B30071EB2F /* UserCommentsView.swift */; };
+		8596A7172AA768FC0071EB2F /* UserCommentsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7162AA768FC0071EB2F /* UserCommentsHeaderView.swift */; };
+		8596A7192AA775CC0071EB2F /* UserCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7182AA775CC0071EB2F /* UserCommentsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		8596A70E2AA75DF50071EB2F /* NetworkManager + UserComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager + UserComments.swift"; sourceTree = "<group>"; };
 		8596A7102AA75EB90071EB2F /* UserCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsViewController.swift; sourceTree = "<group>"; };
 		8596A7122AA761610071EB2F /* UserCommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsViewModel.swift; sourceTree = "<group>"; };
+		8596A7142AA768B30071EB2F /* UserCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsView.swift; sourceTree = "<group>"; };
+		8596A7162AA768FC0071EB2F /* UserCommentsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsHeaderView.swift; sourceTree = "<group>"; };
+		8596A7182AA775CC0071EB2F /* UserCommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +255,9 @@
 		8596A70A2AA75BD30071EB2F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8596A7142AA768B30071EB2F /* UserCommentsView.swift */,
+				8596A7162AA768FC0071EB2F /* UserCommentsHeaderView.swift */,
+				8596A7182AA775CC0071EB2F /* UserCommentsTableViewCell.swift */,
 				8596A7102AA75EB90071EB2F /* UserCommentsViewController.swift */,
 			);
 			path = View;
@@ -332,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8596A7172AA768FC0071EB2F /* UserCommentsHeaderView.swift in Sources */,
 				8596A70F2AA75DF50071EB2F /* NetworkManager + UserComments.swift in Sources */,
 				8596A6FB2AA628D30071EB2F /* UserPostsHeaderView.swift in Sources */,
 				8596A7132AA761610071EB2F /* UserCommentsViewModel.swift in Sources */,
@@ -341,8 +351,10 @@
 				8596A6E52AA5E5670071EB2F /* UserPost.swift in Sources */,
 				8596A6F72AA612450071EB2F /* UserPostsView.swift in Sources */,
 				8596A6E32AA5E4930071EB2F /* NetworkManager + UserPosts.swift in Sources */,
+				8596A7192AA775CC0071EB2F /* UserCommentsTableViewCell.swift in Sources */,
 				85854F1D2AA5DBBA0032A3AB /* AppDelegate.swift in Sources */,
 				8596A6F92AA6130A0071EB2F /* UserPostTableViewCell.swift in Sources */,
+				8596A7152AA768B30071EB2F /* UserCommentsView.swift in Sources */,
 				8596A6E92AA5EEB10071EB2F /* LoginView.swift in Sources */,
 				8596A6FE2AA649130071EB2F /* CoreDataStackManager.swift in Sources */,
 				8596A7082AA74FB00071EB2F /* UserPostsNoDataView.swift in Sources */,

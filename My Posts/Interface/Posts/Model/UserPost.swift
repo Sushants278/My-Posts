@@ -20,5 +20,3 @@ struct UserPost: Codable {
         case id, title, body
     }
 }
-
-

@@ -7,9 +7,16 @@
 
 import Foundation
 
+protocol UserPostCommentsViewModelDelegate: AnyObject {
+    func presentUserPostComments()
+    func presentFailureScreen()
+}
+
 class UserCommentsViewModel {
     
-    private let userPost: UserPost
+    let userPost: UserPost
+    var comments: UserComments?
+    weak var userPostCommentsViewModelDelegate: UserPostCommentsViewModelDelegate?
 
     init(userPost: UserPost) {
         
@@ -28,7 +35,8 @@ class UserCommentsViewModel {
               //  self.userPostsViewModelDelegate?.presentFailureScreen()
             } else {
                 
-               
+                self.comments = postComments
+                self.userPostCommentsViewModelDelegate?.presentUserPostComments()
             }
         }
     }
