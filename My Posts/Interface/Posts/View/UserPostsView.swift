@@ -24,6 +24,13 @@ class UserPostsView: UIView {
         return headerView
     }()
     
+    let noDataView: UserPostsNoDataView = {
+        let noDataView = UserPostsNoDataView()
+        noDataView.isHidden = true
+        noDataView.translatesAutoresizingMaskIntoConstraints = false
+        return noDataView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -40,6 +47,7 @@ class UserPostsView: UIView {
         
         addSubview(headerView)
         addSubview(tableView)
+        addSubview(noDataView)
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
@@ -50,7 +58,12 @@ class UserPostsView: UIView {
             tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            noDataView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+            noDataView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            noDataView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            noDataView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
         
     }

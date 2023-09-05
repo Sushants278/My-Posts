@@ -19,7 +19,7 @@ class UserPostsHeaderView: UIView {
     let segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["All", "Favorites"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControl.selectedSegmentIndex = 0 // Set the initial selected segment
+        segmentedControl.selectedSegmentIndex = 0 
         return segmentedControl
     }()
     

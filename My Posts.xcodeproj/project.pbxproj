@@ -25,6 +25,7 @@
 		8596A6F92AA6130A0071EB2F /* UserPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6F82AA6130A0071EB2F /* UserPostTableViewCell.swift */; };
 		8596A6FB2AA628D30071EB2F /* UserPostsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6FA2AA628D30071EB2F /* UserPostsHeaderView.swift */; };
 		8596A6FE2AA649130071EB2F /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A6FD2AA649130071EB2F /* CoreDataStackManager.swift */; };
+		8596A7082AA74FB00071EB2F /* UserPostsNoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7072AA74FB00071EB2F /* UserPostsNoDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		8596A6F82AA6130A0071EB2F /* UserPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostTableViewCell.swift; sourceTree = "<group>"; };
 		8596A6FA2AA628D30071EB2F /* UserPostsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsHeaderView.swift; sourceTree = "<group>"; };
 		8596A6FD2AA649130071EB2F /* CoreDataStackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		8596A7072AA74FB00071EB2F /* UserPostsNoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsNoDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				8596A6F62AA612450071EB2F /* UserPostsView.swift */,
 				8596A6F82AA6130A0071EB2F /* UserPostTableViewCell.swift */,
 				8596A6FA2AA628D30071EB2F /* UserPostsHeaderView.swift */,
+				8596A7072AA74FB00071EB2F /* UserPostsNoDataView.swift */,
 				8596A6F22AA602B00071EB2F /* UserPostsViewController.swift */,
 			);
 			path = View;
@@ -303,6 +306,7 @@
 				8596A6F92AA6130A0071EB2F /* UserPostTableViewCell.swift in Sources */,
 				8596A6E92AA5EEB10071EB2F /* LoginView.swift in Sources */,
 				8596A6FE2AA649130071EB2F /* CoreDataStackManager.swift in Sources */,
+				8596A7082AA74FB00071EB2F /* UserPostsNoDataView.swift in Sources */,
 				85854F272AA5DBBA0032A3AB /* My_Posts.xcdatamodeld in Sources */,
 				8596A6ED2AA5EEE20071EB2F /* User.swift in Sources */,
 				8596A6F12AA5FD190071EB2F /* UserManager.swift in Sources */,

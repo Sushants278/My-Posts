@@ -507,8 +507,8 @@
             filePath = "My Posts/Interface/Posts/View/UserPostsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "didTapFavouriteButton(userPost:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -603,8 +603,8 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "getAllFavoritedPosts()"
             landmarkType = "7">
             <Locations>
@@ -651,8 +651,8 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "getAllFavoritedPosts()"
             landmarkType = "7">
             <Locations>
@@ -699,8 +699,8 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "getAllFavoritedPosts()"
             landmarkType = "7">
          </BreakpointContent>
@@ -715,8 +715,8 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "toggleFavorite(userPost:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -731,8 +731,8 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "isPostFavorite(userId:postId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -747,8 +747,8 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "fetchAndUpdateFavoritePosts(isFavorite:userPost:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -763,9 +763,9 @@
             filePath = "My Posts/Interface/Posts/ViewModel/UserPostsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "removeFavorite(userId:postId:)"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "removeFavorite(userPost:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

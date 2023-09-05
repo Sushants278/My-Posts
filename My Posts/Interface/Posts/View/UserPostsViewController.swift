@@ -83,12 +83,15 @@ extension UserPostsViewController : UserPostsViewModelDelegate {
         
         DispatchQueue.main.async {
             
+            let isHiddenNoDataView = (self.viewModel.userPosts?.isEmpty ?? false)
+            self.userPostsView.noDataView.isHidden = !isHiddenNoDataView
             self.userPostsView.tableView.reloadData()
         }
     }
     
     func presentFailureScreen() {
         
+        self.userPostsView.noDataView.isHidden = false
     }
 }
 

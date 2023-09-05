@@ -81,24 +81,26 @@ class UserPostsViewModel {
             toggleFavorite(userPost: userPost)
         } else {
             
-            removeFavorite(userId: userPost.userID, postId: userPost.id)
+            removeFavorite(userPost: userPost)
             showAllOrFavoriteUserPosts(isShowFavorite: true)
         }
     }
 
     func toggleFavorite(userPost: UserPost) {
         
-        if userPost.isFavorite ?? false {
+        let isFavorite = userPost.isFavorite ?? false
+        
+        if isFavorite {
             
-            removeFavorite(userId: userPost.userID, postId: userPost.id)
-            fetchAndUpdateFavoritePosts(isFavorite: false, userPost: userPost)
+            removeFavorite(userPost: userPost)
 
         } else {
             
             saveToFavorites(userPost: userPost)
-            fetchAndUpdateFavoritePosts(isFavorite: true, userPost: userPost)
         }
         
+        fetchAndUpdateFavoritePosts(isFavorite: !isFavorite, userPost: userPost)
+
         if let indexPath = indexPathForUserPost(userPost) {
             
             userPostsViewModelDelegate?.presentUpdatedUserPosts(indexPath: indexPath)
@@ -118,11 +120,11 @@ class UserPostsViewModel {
         }
     }
 
-    func removeFavorite(userId: Int, postId: Int) {
+    func removeFavorite(userPost: UserPost) {
         
         let context = CoreDataStackManager.shared.managedObjectContext
         let fetchRequest: NSFetchRequest<FavoritePost> = FavoritePost.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "userId == %d AND id == %d", userId, postId)
+        fetchRequest.predicate = NSPredicate(format: "userId == %d AND id == %d", userPost.userID, userPost.id)
         
         do {
             let favoritePosts = try context.fetch(fetchRequest)
