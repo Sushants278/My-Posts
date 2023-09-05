@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewDelegate {
     
-    func loginButtonTapped(userID: String) {
+    func didTapLoginButton(userID: String) {
         
         viewModel.save(userID: userID)
     }

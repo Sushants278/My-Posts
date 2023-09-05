@@ -9,18 +9,30 @@ import UIKit
 
 protocol LoginViewDelegate: AnyObject {
     
-    func loginButtonTapped(userID: String)
+    func didTapLoginButton(userID: String)
 }
 
 class LoginView: UIView {
 
     weak var delegate: LoginViewDelegate?
 
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Welcome to My Posts App"
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.textColor = .black
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     private let userIDTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter UserID"
         textField.borderStyle = .roundedRect
         textField.keyboardType = .numberPad
+        textField.textColor = .black
+        textField.layer.borderColor = UIColor.black.cgColor
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -28,7 +40,11 @@ class LoginView: UIView {
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        button.tintColor = .white
+        button.layer.cornerRadius = 20
         button.isEnabled = false
+        button.backgroundColor = UIColor(red: 0.22, green: 0.49, blue: 0.98, alpha: 1.0) 
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -46,22 +62,27 @@ class LoginView: UIView {
     }
 
     private func setupUI() {
-        
         self.backgroundColor = .white
-        
-        addSubview(userIDTextField)
-        addSubview(loginButton)
 
+        addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            
-            userIDTextField.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            userIDTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            userIDTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            userIDTextField.heightAnchor.constraint(equalToConstant: 40),
-            
-            loginButton.topAnchor.constraint(equalTo: userIDTextField.bottomAnchor, constant: 16),
-            loginButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            loginButton.widthAnchor.constraint(equalToConstant: 120), 
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 250),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+
+        addSubview(userIDTextField)
+        NSLayoutConstraint.activate([
+            userIDTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            userIDTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            userIDTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            userIDTextField.heightAnchor.constraint(equalToConstant: 50)
+        ])
+
+        addSubview(loginButton)
+        NSLayoutConstraint.activate([
+            loginButton.topAnchor.constraint(equalTo: userIDTextField.bottomAnchor, constant: 30),
+            loginButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            loginButton.widthAnchor.constraint(equalToConstant: 120),
             loginButton.heightAnchor.constraint(equalToConstant: 40)
         ])
 
@@ -70,18 +91,18 @@ class LoginView: UIView {
 
     @objc private func loginButtonTapped() {
         
-        guard let userID = userIDTextField.text else { return }
-        
-        delegate?.loginButtonTapped(userID: userID)
+        if let userID = userIDTextField.text {
+            
+            delegate?.didTapLoginButton(userID: userID)
+        }
     }
-    
+
     private func setupObservers() {
         
-         userIDTextField.addTarget(self, action: #selector(userIDTextFieldDidChange), for: .editingChanged)
-     }
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange), name: UITextField.textDidChangeNotification, object: userIDTextField)
+    }
 
-     @objc private func userIDTextFieldDidChange() {
-      
-         loginButton.isEnabled = !( userIDTextField.text ?? "" ).isEmpty
-     }
+    @objc private func textFieldDidChange() {
+        loginButton.isEnabled = !(userIDTextField.text?.isEmpty ?? true)
+    }
 }

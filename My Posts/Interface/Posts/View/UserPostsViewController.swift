@@ -63,7 +63,7 @@ extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        50.0
+        60.0
     }
 }
 

@@ -53,8 +53,8 @@ class UserPostTableViewCell: UITableViewCell {
         
         self.selectionStyle = .none
         
-        let filledHeartImage = UIImage(systemName: "heart.fill")
-        let unfilledHeartImage = UIImage(systemName: "heart")
+        let filledHeartImage = UIImage(systemName: "suit.heart.fill")
+        let unfilledHeartImage = UIImage(systemName: "suit.heart")
         
         favouriteButton.setImage(unfilledHeartImage, for: .normal)
         favouriteButton.setImage(filledHeartImage, for: .selected)
