@@ -9,7 +9,6 @@ import Foundation
 import CoreData
 
 protocol UserPostsViewModelDelegate: AnyObject {
-    
     func presentUserPosts()
     func presentFailureScreen()
     func presentUpdatedUserPosts(indexPath: IndexPath)
@@ -18,33 +17,37 @@ protocol UserPostsViewModelDelegate: AnyObject {
 class UserPostsViewModel {
     
     weak var userPostsViewModelDelegate: UserPostsViewModelDelegate?
-    var userPosts: UserPosts?
     private var mainUserPosts: UserPosts?
     private var isShowAllUserPosts = true
-    
+
+     var userPosts: UserPosts? {
+        didSet {
+            
+            userPostsViewModelDelegate?.presentUserPosts()
+        }
+    }
+
     func fetchUserPosts() {
-        
         let userID = UserManager.shared.getUserID() ?? ""
         
-        NetworkManager.shared.fetchUserPosts(for: userID) {  [weak self] userPosts, error in
-            
-            guard let self = self else {
-                
-                return
-            }
+        NetworkManager.shared.fetchUserPosts(for: userID) { [weak self] userPosts, error in
+            guard let self = self else { return }
             
             if let _ = error {
                 
                 self.userPostsViewModelDelegate?.presentFailureScreen()
             } else {
+                
                 self.mainUserPosts = userPosts
-                self.parseUserPosts()
+                self.prepareUserPosts()
             }
         }
     }
-    
-    func parseUserPosts() {
+
+    func prepareUserPosts() {
+        
         if let userPosts = self.mainUserPosts {
+            
             let parsedUserPosts = userPosts.map { item in
                 return UserPost(
                     userID: item.userID,
@@ -56,83 +59,68 @@ class UserPostsViewModel {
             }
             self.userPosts = parsedUserPosts
             self.isShowAllUserPosts = true
-            self.userPostsViewModelDelegate?.presentUserPosts()
         }
     }
 
-    func showAllOrFavoriteUserPosts(isShowFavortie : Bool) {
-                
-        if !isShowFavortie {
-    
-            parseUserPosts()
+    func showAllOrFavoriteUserPosts(isShowFavorite: Bool) {
+        
+        if !isShowFavorite {
+            
+            prepareUserPosts()
         } else {
             
             self.isShowAllUserPosts = false
             self.userPosts = getAllFavoritedPosts()
-            self.userPostsViewModelDelegate?.presentUserPosts()
         }
-        
     }
-    
+
     func favoritePost(userPost: UserPost) {
         
         if isShowAllUserPosts {
             
-            removeFavoritePostFromAllList(userPost: userPost)
-        } else {
-            
-            removeFavoritePostFromFavoriteList(userPost: userPost)
-        }
-    }
-
-    func removeFavoritePostFromAllList(userPost: UserPost) {
-        
-        if !(userPost.isFavorite ?? false) {
-            
-            saveToFavorites(userPost: userPost)
-            
-            fetchAndSetFavoritedPosts()
-            
+            toggleFavorite(userPost: userPost)
         } else {
             
             removeFavorite(userId: userPost.userID, postId: userPost.id)
+            showAllOrFavoriteUserPosts(isShowFavorite: true)
+        }
+    }
+
+    func toggleFavorite(userPost: UserPost) {
+        
+        if userPost.isFavorite ?? false {
             
-            if let index = userPosts?.firstIndex(where: { $0.id == userPost.id }) {
-                
-                userPosts?[index].isFavorite = false
-            }
+            removeFavorite(userId: userPost.userID, postId: userPost.id)
+            fetchAndUpdateFavoritePosts(isFavorite: false, userPost: userPost)
+
+        } else {
+            
+            saveToFavorites(userPost: userPost)
+            fetchAndUpdateFavoritePosts(isFavorite: true, userPost: userPost)
         }
         
-        let indexPath = self.indexPathForUserPost(userPost) ?? IndexPath(row: 0, section: 0)
-        self.userPostsViewModelDelegate?.presentUpdatedUserPosts(indexPath: indexPath)
-    }
-    
-    func removeFavoritePostFromFavoriteList(userPost: UserPost) {
-        
-        removeFavorite(userId: userPost.userID, postId: userPost.id)
-        self.userPosts = getAllFavoritedPosts()
-        self.userPostsViewModelDelegate?.presentUserPosts()
+        if let indexPath = indexPathForUserPost(userPost) {
+            
+            userPostsViewModelDelegate?.presentUpdatedUserPosts(indexPath: indexPath)
+        }
     }
 
     func saveToFavorites(userPost: UserPost) {
-    
-        let context = CoreDataStackManager.shared.managedObjectContext
         
+        let context = CoreDataStackManager.shared.managedObjectContext
         if let userPostEntity = NSEntityDescription.entity(forEntityName: "FavoritePost", in: context),
            let userPostOfflineObject = NSManagedObject(entity: userPostEntity, insertInto: context) as? FavoritePost {
-            
             userPostOfflineObject.title = userPost.title
             userPostOfflineObject.body = userPost.body
             userPostOfflineObject.userId = String(userPost.userID)
             userPostOfflineObject.id = String(userPost.id)
-            
             CoreDataStackManager.shared.saveContext()
         }
     }
-    
+
     func removeFavorite(userId: Int, postId: Int) {
-        let context = CoreDataStackManager.shared.managedObjectContext
         
+        let context = CoreDataStackManager.shared.managedObjectContext
         let fetchRequest: NSFetchRequest<FavoritePost> = FavoritePost.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userId == %d AND id == %d", userId, postId)
         
@@ -147,11 +135,9 @@ class UserPostsViewModel {
         }
     }
 
-    
     func isPostFavorite(userId: Int, postId: Int) -> Bool {
         
         let context = CoreDataStackManager.shared.managedObjectContext
-
         let fetchRequest: NSFetchRequest<FavoritePost> = FavoritePost.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userId == %d AND id == %d", userId, postId)
         
@@ -163,16 +149,16 @@ class UserPostsViewModel {
             return false
         }
     }
-    
-    func getAllFavoritedPosts() -> [UserPost] {
+
+    func getAllFavoritedPosts() -> UserPosts {
         let context = CoreDataStackManager.shared.managedObjectContext
-        
+        let userID = Int(UserManager.shared.getUserID() ?? "") ?? -1
         let fetchRequest: NSFetchRequest<FavoritePost> = FavoritePost.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userId == %d", userID )
         
         do {
             let favoritePosts = try context.fetch(fetchRequest)
-            
-            return favoritePosts.compactMap { favoritePost in
+            return favoritePosts.map { favoritePost in
                 return UserPost(
                     userID: Int(favoritePost.userId ?? "") ?? 0,
                     id: Int(favoritePost.id ?? "") ?? 0,
@@ -186,25 +172,21 @@ class UserPostsViewModel {
             return []
         }
     }
-    
-    func fetchAndSetFavoritedPosts() {
+
+    func fetchAndUpdateFavoritePosts(isFavorite : Bool, userPost: UserPost) {
         
-        let favoritedPosts = getAllFavoritedPosts()
-         for favoritedPost in favoritedPosts {
-            if let index = self.userPosts?.firstIndex(where: { $0.id == favoritedPost.id }) {
-                self.userPosts?[index].isFavorite = true
+        guard let userPosts = userPosts else { return }
+            if let index = userPosts.firstIndex(where: { $0.id == userPost.id }) {
+                self.userPosts?[index].isFavorite = isFavorite
             }
-        }
     }
-    
+
     func indexPathForUserPost(_ userPost: UserPost) -> IndexPath? {
         
-       if let rowIndex = self.userPosts?.firstIndex(where: { $0.id == userPost.id }) {
-            
-          return IndexPath(row: rowIndex, section: 0)
-       }
-
+        guard let userPosts = userPosts else { return nil }
+        if let rowIndex = userPosts.firstIndex(where: { $0.id == userPost.id }) {
+            return IndexPath(row: rowIndex, section: 0)
+        }
         return nil
     }
-    
 }
