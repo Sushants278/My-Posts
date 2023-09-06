@@ -16,11 +16,12 @@ protocol UserPostsViewModelDelegate: AnyObject {
 
 class UserPostsViewModel {
     
+    // MARK: - Properties
+    
     weak var delegate: UserPostsViewModelDelegate?
     private var mainUserPosts: UserPosts?
     var isShowAllUserPosts = true
     var networkService: UserPostsRequests = NetworkManager.shared
-    
     var userPosts: UserPosts? {
         didSet {
             
@@ -28,6 +29,8 @@ class UserPostsViewModel {
         }
     }
     
+    /// Fetches user posts from the network service for the currently logged-in user and update the results.
+
     func fetchUserPosts() {
         let userID = UserManager.shared.getUserID() ?? ""
         
@@ -44,6 +47,8 @@ class UserPostsViewModel {
             }
         }
     }
+    
+    /// Prepares user posts retrieved from the network by parsing them and making them available for presentation.
     
     func prepareUserPosts() {
         
@@ -62,6 +67,8 @@ class UserPostsViewModel {
             self.isShowAllUserPosts = true
         }
     }
+    /// Toggles the favorite status of a user post.
+    /// - Parameter userPost: The user post to toggle the favorite status for.
     
     func favoritePost(userPost: UserPost) {
         
@@ -75,6 +82,9 @@ class UserPostsViewModel {
         }
     }
     
+    /// Sets the display filter to either show all user posts or only favorites.
+    /// - Parameter isShowFavorite: A Boolean flag indicating whether to show only favorites or all user posts.
+
     func showAllOrFavoriteUserPosts(isShowFavorite: Bool) {
         
         if !isShowFavorite {
@@ -87,6 +97,9 @@ class UserPostsViewModel {
         }
     }
     
+    /// Toggles the favorite status of a user post.
+    /// - Parameter userPost: The user post to toggle the favorite status for.
+
     private func toggleFavorite(userPost: UserPost) {
         
         let isFavorite = userPost.isFavorite ?? false
@@ -108,6 +121,9 @@ class UserPostsViewModel {
         }
     }
     
+    /// Saves a user post to the list of favorite posts.
+    /// - Parameter userPost: The user post to be saved as a favorite.
+    
     private func saveToFavorites(userPost: UserPost) {
         
         let context = CoreDataStackManager.shared.managedObjectContext
@@ -120,6 +136,9 @@ class UserPostsViewModel {
             CoreDataStackManager.shared.saveContext()
         }
     }
+    
+    /// Removes a user post from the list of favorite posts.
+    /// - Parameter userPost: The user post to be removed from favorites.
     
     private func removeFavorite(userPost: UserPost) {
         
@@ -138,6 +157,12 @@ class UserPostsViewModel {
         }
     }
     
+    /// Checks if a user post is marked as a favorite.
+    /// - Parameters:
+    ///   - userId: The ID of the user.
+    ///   - postId: The ID of the post.
+    /// - Returns: A Boolean value indicating whether the user post is a favorite.
+    
     private func isPostFavorite(userId: Int, postId: Int) -> Bool {
         
         let context = CoreDataStackManager.shared.managedObjectContext
@@ -152,6 +177,9 @@ class UserPostsViewModel {
             return false
         }
     }
+    
+    /// Retrieves all user posts marked as favorites.
+    /// - Returns: An array of user posts that are marked as favorites
     
     private func getAllFavoritedPosts() -> UserPosts {
         let context = CoreDataStackManager.shared.managedObjectContext
@@ -176,6 +204,11 @@ class UserPostsViewModel {
         }
     }
     
+    /// Updates the favorite status of a user post and refreshes the view.
+    /// - Parameters:
+    ///   - isFavorite: A Boolean flag indicating whether the user post is now a favorite.
+    ///   - userPost: The user post whose favorite status is being updated.
+    
     private func fetchAndUpdateFavoritePosts(isFavorite : Bool, userPost: UserPost) {
         
         guard let userPosts = userPosts else { return }
@@ -184,6 +217,10 @@ class UserPostsViewModel {
         }
     }
     
+    /// Finds the index path of a user post in the table view's data source.
+    /// - Parameter userPost: The user post for which the index path is to be found.
+    /// - Returns: An optional index path indicating the position of the user post in the table view,
+
     private func indexPathForUserPost(_ userPost: UserPost) -> IndexPath? {
         
         guard let userPosts = userPosts else { return nil }

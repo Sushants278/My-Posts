@@ -9,8 +9,12 @@ import UIKit
 
 class UserPostsViewController: UIViewController {
     
+    // MARK: - Properties
+    
     private let viewModel = UserPostsViewModel()
     private let userPostsView = UserPostsView()
+    
+    // MARK: - view Lifecycle
     
     override func viewDidLoad() {
         
@@ -39,6 +43,8 @@ class UserPostsViewController: UIViewController {
 
 extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: - UITableViewDataSource Methods
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         viewModel.userPosts?.count ?? 0
@@ -57,6 +63,8 @@ extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    // MARK: - UITableViewDelegate Methods
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let userPost = viewModel.userPosts?[indexPath.row] else {
@@ -72,7 +80,10 @@ extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
         80.0
     }
     
-    func didTapOnPostCell(userPost: UserPost) {
+    /// Presents the UserCommentsViewController when a user post cell is tapped.
+    /// - Parameter userPost: The user post associated with the tapped cell.
+    
+    private func didTapOnPostCell(userPost: UserPost) {
         
         let viewModel = UserCommentsViewModel(userPost: userPost)
         let userCommentsVC = UserCommentsViewController(viewModel: viewModel)
@@ -82,7 +93,9 @@ extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension UserPostsViewController : UserPostsViewModelDelegate {
     
-    
+    /// Reloads a specific table view row with updated user posts data.
+    /// - Parameter indexPath: specific reload indexPath
+
     func presentUpdatedUserPosts(indexPath: IndexPath) {
         
         DispatchQueue.main.async {
@@ -91,7 +104,8 @@ extension UserPostsViewController : UserPostsViewModelDelegate {
         }
     }
     
-    
+    /// Updates the UI to present user posts or hides the "No Data" view accordingly.
+
     func presentUserPosts() {
         
         DispatchQueue.main.async {
@@ -102,6 +116,8 @@ extension UserPostsViewController : UserPostsViewModelDelegate {
         }
     }
     
+    /// Shows the "No Data" view in case of a failure in loading user posts.
+
     func presentFailureScreen() {
         
         self.userPostsView.noDataView.isHidden = false
@@ -109,6 +125,9 @@ extension UserPostsViewController : UserPostsViewModelDelegate {
 }
 
 extension UserPostsViewController : HeaderViewDelegate {
+    
+    /// Handles the value change event of the segmented control in the header view.
+   /// - Parameter selectedIndex: The index of the selected segment.
     
     func segmentedControlValueChanged(_ selectedIndex: Int) {
         
@@ -119,6 +138,9 @@ extension UserPostsViewController : HeaderViewDelegate {
 
 extension UserPostsViewController : UserPostTableViewDelegate {
 
+    /// Handles the tap event of the favorite button in a user post cell.
+    /// - Parameter userPost: The user post for which the favorite button was tapped.
+    
     func didTapFavouriteButton(userPost: UserPost) {
         
         viewModel.favoritePost(userPost: userPost)

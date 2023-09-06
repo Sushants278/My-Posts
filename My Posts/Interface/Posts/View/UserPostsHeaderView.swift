@@ -16,6 +16,8 @@ class UserPostsHeaderView: UIView {
     
     weak var delegate: HeaderViewDelegate?
     
+    // MARK: - UI Elements
+    
     let segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["All", "Favorites"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false

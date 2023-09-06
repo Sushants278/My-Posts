@@ -14,8 +14,26 @@ protocol UserPostTableViewDelegate: AnyObject {
 
 class UserPostTableViewCell: UITableViewCell {
     
-     private var userPost: UserPost?
-     weak var delegate: UserPostTableViewDelegate?
+    struct ViewTraits {
+        
+        static let postTitleLabelLeading: CGFloat = 16
+        static let postTitleLabelTrailingToFavoriteButton: CGFloat = -16
+        static let postTitleLabelTop: CGFloat = 10
+        static let postTitleLabelHeight: CGFloat = 20
+        
+        static let bodyLabelLeading: CGFloat = 16
+        static let bodyLabelTrailingToFavoriteButton: CGFloat = -16
+        static let bodyLabelTopToPostTitleLabel: CGFloat = 10
+        static let bodyLabelHeight: CGFloat = 20
+        
+        static let favoriteButtonTrailing: CGFloat = -16
+        static let favoriteButtonCenterY: CGFloat = 0
+        static let favoriteButtonWidth: CGFloat = 30
+        static let favoriteButtonHeight: CGFloat = 30
+    }
+    
+    private var userPost: UserPost?
+    weak var delegate: UserPostTableViewDelegate?
     
     // MARK: - UI Elements
     
@@ -65,26 +83,26 @@ class UserPostTableViewCell: UITableViewCell {
         favouriteButton.addTarget(self, action: #selector(favouriteButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
+            postTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewTraits.postTitleLabelLeading),
+            postTitleLabel.trailingAnchor.constraint(equalTo: favouriteButton.leadingAnchor, constant: ViewTraits.postTitleLabelTrailingToFavoriteButton),
+            postTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: ViewTraits.postTitleLabelTop),
+            postTitleLabel.heightAnchor.constraint(equalToConstant: ViewTraits.postTitleLabelHeight),
             
-            postTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            postTitleLabel.trailingAnchor.constraint(equalTo: favouriteButton.leadingAnchor, constant: -16),
-            postTitleLabel.topAnchor.constraint(equalTo:contentView.topAnchor, constant: 10),
-            postTitleLabel.heightAnchor.constraint(equalToConstant: 20),
-
+            bodyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewTraits.bodyLabelLeading),
+            bodyLabel.trailingAnchor.constraint(equalTo: favouriteButton.leadingAnchor, constant: ViewTraits.bodyLabelTrailingToFavoriteButton),
+            bodyLabel.topAnchor.constraint(equalTo: postTitleLabel.bottomAnchor, constant: ViewTraits.bodyLabelTopToPostTitleLabel),
+            bodyLabel.heightAnchor.constraint(equalToConstant: ViewTraits.bodyLabelHeight),
             
-            bodyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            bodyLabel.trailingAnchor.constraint(equalTo: favouriteButton.leadingAnchor, constant: -16),
-            bodyLabel.topAnchor.constraint(equalTo:postTitleLabel.bottomAnchor, constant: 10),
-            bodyLabel.heightAnchor.constraint(equalToConstant: 20),
-            
-            favouriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            favouriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            favouriteButton.widthAnchor.constraint(equalToConstant: 30),
-            favouriteButton.heightAnchor.constraint(equalToConstant: 30)
+            favouriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: ViewTraits.favoriteButtonTrailing),
+            favouriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: ViewTraits.favoriteButtonCenterY),
+            favouriteButton.widthAnchor.constraint(equalToConstant: ViewTraits.favoriteButtonWidth),
+            favouriteButton.heightAnchor.constraint(equalToConstant: ViewTraits.favoriteButtonHeight)
         ])
     }
     
-    // MARK: - Configure Cell
+
+    /// Configures the cell with the provided user post data and updates the UI elements accordingly.
+    /// - Parameter userPost: The user post to be displayed in the cell.
     
     func configure(with userPost: UserPost) {
         
@@ -94,9 +112,10 @@ class UserPostTableViewCell: UITableViewCell {
         let isFavorite = userPost.isFavorite ?? false
         let image = UIImage(systemName: isFavorite ? "suit.heart.fill" : "suit.heart")
         favouriteButton.setBackgroundImage(image, for: .normal)
-
     }
     
+   
+    /// Toggles the selection state of the favorite button and notifies the delegate.
     
     @objc private func favouriteButtonTapped() {
         

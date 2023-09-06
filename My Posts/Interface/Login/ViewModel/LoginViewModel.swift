@@ -22,7 +22,7 @@ class LoginViewModel {
     
     func loginWith(userID: String) {
         
-        guard let userIDInt = Int(userID), (1...10).contains(userIDInt) else {
+        guard let isUserValid = Int(userID), (1...10).contains(isUserValid) else {
             
             delegate?.presentLoginFailure()
             return

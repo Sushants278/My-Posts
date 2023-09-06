@@ -9,8 +9,13 @@ import UIKit
 
 class UserPostsView: UIView {
     
-    // MARK: - UI Elements
+    struct ViewTraits {
+        
+        static let headerViewTopSpace: CGFloat = 80
+        static let headerViewHeight: CGFloat = 50
+    }
     
+    // MARK: - UI Elements
 
     let tableView: UITableView = {
         let tableView = UITableView()
@@ -50,10 +55,11 @@ class UserPostsView: UIView {
         addSubview(noDataView)
         
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
+            
+            headerView.topAnchor.constraint(equalTo: self.topAnchor, constant: ViewTraits.headerViewTopSpace),
             headerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 50),
+            headerView.heightAnchor.constraint(equalToConstant: ViewTraits.headerViewHeight),
             
             tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -71,10 +77,10 @@ class UserPostsView: UIView {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffset = scrollView.contentOffset.y
         if yOffset < 0 {
-            // Header view is pulled down; keep it at the top
+            
             headerView.frame.origin.y = 0
         } else {
-            // Header view is scrolled up; update its position
+            
             headerView.frame.origin.y = -yOffset
         }
     }
