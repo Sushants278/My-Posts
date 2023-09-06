@@ -9,6 +9,8 @@ import UIKit
 
 class UserCommentsViewController: UIViewController {
     
+    // MARK: - Properties
+
     var viewModel: UserCommentsViewModel?
     private let userCommentsView = UserCommentsView()
     
@@ -17,6 +19,8 @@ class UserCommentsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
     }
+    
+    // MARK: - view Lifecycle
     
     required init?(coder: NSCoder) {
         
@@ -41,6 +45,8 @@ class UserCommentsViewController: UIViewController {
         self.viewModel?.fetchCommentsForPost()
     }
 }
+
+// MARK: - UITableViewDataSource & UITableViewDelegate
 
 extension UserCommentsViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -68,17 +74,28 @@ extension UserCommentsViewController: UITableViewDelegate, UITableViewDataSource
 
 extension UserCommentsViewController : UserPostCommentsViewModelDelegate {
     
+
+    /// Notifies the view controller that user post comments are ready to be presented. Reloads the table view to display the comments.
+         
     func presentUserPostComments() {
         
         DispatchQueue.main.async {
             
             self.userCommentsView.tableView.reloadData()
         }
-        
     }
     
+    
+    /// Notifies the view controller that there was a failure in fetching user post comments.
+       
     func presentFailureScreen() {
         
+        let alertController = UIAlertController(title: "My Posts", message: "Somehting went wrong", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+          alertController.addAction(okAction)
+        
+          self.present(alertController, animated: true, completion: nil)
     }
     
 }

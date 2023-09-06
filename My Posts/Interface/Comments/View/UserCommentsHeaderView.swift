@@ -9,7 +9,24 @@ import UIKit
 
 class UserCommentsHeaderView: UIView {
     
-    // MARK: - Properties
+    struct ViewTraits {
+        
+        static let containerViewTop: CGFloat = 16
+        static let containerViewLeading: CGFloat = 16
+        static let containerViewTrailing: CGFloat = -16
+        static let containerViewBottom: CGFloat = 0
+        
+        static let titleLabelTop: CGFloat = 20
+        static let titleLabelLeading: CGFloat = 20
+        static let titleLabelTrailing: CGFloat = -20
+        
+        static let subtitleLabelTop: CGFloat = 10
+        static let subtitleLabelLeading: CGFloat = 20
+        static let subtitleLabelTrailing: CGFloat = -20
+        static let subtitleLabelBottom: CGFloat = -20
+    }
+    
+    // MARK: - UI Elements
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -24,7 +41,7 @@ class UserCommentsHeaderView: UIView {
     private let containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 82/255, green: 144/255, blue: 255/255, alpha: 1.0) 
+        view.backgroundColor = UIColor(red: 82/255, green: 144/255, blue: 255/255, alpha: 1.0)
         view.layer.cornerRadius = 15
         view.layer.shadowColor = UIColor.gray.cgColor
         view.layer.shadowOpacity = 0.5
@@ -56,29 +73,33 @@ class UserCommentsHeaderView: UIView {
     // MARK: - Private Methods
     
     private func setupUI() {
+        
         containerView.addSubview(titleLabel)
         containerView.addSubview(subtitleLabel)
         addSubview(containerView)
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            containerView.topAnchor.constraint(equalTo: topAnchor, constant: ViewTraits.containerViewTop),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ViewTraits.containerViewLeading),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ViewTraits.containerViewTrailing),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ViewTraits.containerViewBottom),
             
-            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 20),
-            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: ViewTraits.titleLabelTop),
+            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: ViewTraits.titleLabelLeading),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: ViewTraits.titleLabelTrailing),
             
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            subtitleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-            subtitleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
-            subtitleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: ViewTraits.subtitleLabelTop),
+            subtitleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: ViewTraits.subtitleLabelLeading),
+            subtitleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: ViewTraits.subtitleLabelTrailing),
+            subtitleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: ViewTraits.subtitleLabelBottom),
         ])
     }
     
-    // MARK: - Public Methods
-    
+    /// Configures the header view with the provided title and subtitle text.
+    /// - Parameters:
+    ///   - title: The title text to display.
+    ///   - subtitle: The subtitle text to display.
+    ///
     func configure(title: String, subtitle: String) {
         titleLabel.text = title
         subtitleLabel.text = subtitle

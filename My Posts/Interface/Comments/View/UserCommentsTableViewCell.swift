@@ -9,7 +9,15 @@ import UIKit
 
 class UserCommentsTableViewCell: UITableViewCell {
     
-    // MARK: - Properties
+    struct ViewTraits {
+        
+        static let stackViewTopAnchorConstant: CGFloat = 8
+        static let stackViewLeadingAnchorConstant: CGFloat = 16
+        static let stackViewTrailingAnchorConstant: CGFloat = -16
+        static let stackViewBottomAnchorConstant: CGFloat = -16
+    }
+    
+    // MARK: - UI Elements
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -48,25 +56,24 @@ class UserCommentsTableViewCell: UITableViewCell {
         setupUI()
     }
     
-    // MARK: - Private Methods
     
     private func setupUI() {
-
+        
         stackView.addArrangedSubview(emailLabel)
         stackView.addArrangedSubview(commentLabel)
-
         contentView.addSubview(stackView)
-
-        NSLayoutConstraint.activate([
         
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: ViewTraits.stackViewTopAnchorConstant),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewTraits.stackViewLeadingAnchorConstant),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: ViewTraits.stackViewTrailingAnchorConstant),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: ViewTraits.stackViewBottomAnchorConstant)
         ])
     }
     
-    // MARK: - Public Methods
+    
+    /// Configures the UserCommentTableViewCell with the provided UserComment data.
+    /// - Parameter comment: The UserComment object containing the comment details to be displayed.
     
     func configure(comment: UserComment) {
         emailLabel.text = comment.email

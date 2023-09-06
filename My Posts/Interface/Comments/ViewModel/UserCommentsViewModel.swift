@@ -14,6 +14,8 @@ protocol UserPostCommentsViewModelDelegate: AnyObject {
 
 class UserCommentsViewModel {
     
+    // MARK: - Properties
+    
     let userPost: UserPost
     var postComments: UserComments?
     weak var delegate: UserPostCommentsViewModelDelegate?
@@ -24,6 +26,8 @@ class UserCommentsViewModel {
         self.userPost = userPost
     }
     
+
+    /// Fetches user comments for a specific post and update the results.
     
     func fetchCommentsForPost() {
 
