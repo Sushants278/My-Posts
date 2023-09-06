@@ -9,8 +9,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    // MARK: - properties
+    
     private let viewModel = LoginViewModel()
     private let loginView = LoginView()
+    
+    // MARK: - view Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +31,19 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewDelegate {
     
+    /// This method is called when the login button is tapped in the LoginView.
+    /// - Parameter userID: The user ID entered by the user.
+    
     func didTapLoginButton(userID: String) {
         
-        viewModel.save(userID: userID)
+        viewModel.loginWith(userID: userID)
     }
 }
 
 extension LoginViewController: LoginViewModelDelegate {
     
+    /// This method is called when the login is successful. It presents the UserPostsViewController.
+
     func presentLoginSuccessful() {
         
         let userPostsViewController = UserPostsViewController()
@@ -47,6 +56,8 @@ extension LoginViewController: LoginViewModelDelegate {
         }
     }
     
+    /// This method is called when the login fails. It presents an alert to inform the user.
+
     func presentLoginFailure() {
         
         let alertController = UIAlertController(title: "Login Failed", message: "Enter valid userID", preferredStyle: .alert)

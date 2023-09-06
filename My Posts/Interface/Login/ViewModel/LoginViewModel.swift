@@ -17,7 +17,10 @@ class LoginViewModel {
     
     weak var delegate: LoginViewModelDelegate?
     
-    func save(userID: String) {
+    /// Attempts to log in with the provided user ID.
+    /// - Parameter userID: The user ID entered by the user.
+    
+    func loginWith(userID: String) {
         
         guard let userIDInt = Int(userID), (1...10).contains(userIDInt) else {
             

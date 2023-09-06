@@ -13,9 +13,22 @@ protocol LoginViewDelegate: AnyObject {
 }
 
 class LoginView: UIView {
-
+    
+    struct ViewTraits {
+        
+        static let titleLabelTopSpace: CGFloat = 250
+        static let textFieldTopSpace: CGFloat = 30
+        static let textFieldLeadingSpace: CGFloat = 25
+        static let textFieldTrailingSpace: CGFloat = -25
+        static let textFieldHeight: CGFloat = 50
+        static let buttonTopSpace: CGFloat = 30
+        static let buttonWidth: CGFloat = 120
+        static let buttonHeight: CGFloat = 40
+    }
+    // MARK: - UI Elements
+    
     weak var delegate: LoginViewDelegate?
-
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Welcome to My Posts App"
@@ -25,7 +38,7 @@ class LoginView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     private let userIDTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter UserID"
@@ -36,7 +49,7 @@ class LoginView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
-
+    
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
@@ -44,49 +57,52 @@ class LoginView: UIView {
         button.tintColor = .white
         button.layer.cornerRadius = 20
         button.isEnabled = false
-        button.backgroundColor = UIColor(red: 0.22, green: 0.49, blue: 0.98, alpha: 1.0) 
+        button.backgroundColor = UIColor(red: 0.22, green: 0.49, blue: 0.98, alpha: 1.0)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
         setupObservers()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupUI()
         setupObservers()
     }
-
+    
     private func setupUI() {
+        
         self.backgroundColor = .white
-
+        
         addSubview(titleLabel)
         addSubview(userIDTextField)
         addSubview(loginButton)
         
         NSLayoutConstraint.activate([
             
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 250),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ViewTraits.titleLabelTopSpace),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-     
-            userIDTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
-            userIDTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            userIDTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            userIDTextField.heightAnchor.constraint(equalToConstant: 50),
-      
-            loginButton.topAnchor.constraint(equalTo: userIDTextField.bottomAnchor, constant: 30),
+            
+            userIDTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: ViewTraits.textFieldTopSpace),
+            userIDTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ViewTraits.textFieldLeadingSpace),
+            userIDTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ViewTraits.textFieldTrailingSpace),
+            userIDTextField.heightAnchor.constraint(equalToConstant: ViewTraits.textFieldHeight),
+            
+            loginButton.topAnchor.constraint(equalTo: userIDTextField.bottomAnchor, constant: ViewTraits.buttonTopSpace),
             loginButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            loginButton.widthAnchor.constraint(equalToConstant: 120),
-            loginButton.heightAnchor.constraint(equalToConstant: 40)
+            loginButton.widthAnchor.constraint(equalToConstant: ViewTraits.buttonWidth),
+            loginButton.heightAnchor.constraint(equalToConstant: ViewTraits.buttonHeight)
         ])
-
+        
         loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
     }
-
+    
+    /// Handles the tap action on the login button.
+    
     @objc private func didTapLoginButton() {
         
         if let userID = userIDTextField.text {
@@ -94,12 +110,12 @@ class LoginView: UIView {
             delegate?.didTapLoginButton(userID: userID)
         }
     }
-
+    
     private func setupObservers() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange), name: UITextField.textDidChangeNotification, object: userIDTextField)
     }
-
+    
     @objc private func textFieldDidChange() {
         
         loginButton.isEnabled = !(userIDTextField.text?.isEmpty ?? true)

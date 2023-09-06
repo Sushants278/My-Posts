@@ -8,5 +8,7 @@
 import Foundation
 
 struct User {
-    var userID: String
+    
+   /* Currently there is no use of Model but based on future requirement we can utilise the same*/
+    
 }
