@@ -65,31 +65,29 @@ class LoginView: UIView {
         self.backgroundColor = .white
 
         addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 250),
-            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
-        ])
-
         addSubview(userIDTextField)
+        addSubview(loginButton)
+        
         NSLayoutConstraint.activate([
+            
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 250),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+     
             userIDTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
             userIDTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             userIDTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            userIDTextField.heightAnchor.constraint(equalToConstant: 50)
-        ])
-
-        addSubview(loginButton)
-        NSLayoutConstraint.activate([
+            userIDTextField.heightAnchor.constraint(equalToConstant: 50),
+      
             loginButton.topAnchor.constraint(equalTo: userIDTextField.bottomAnchor, constant: 30),
             loginButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             loginButton.widthAnchor.constraint(equalToConstant: 120),
             loginButton.heightAnchor.constraint(equalToConstant: 40)
         ])
 
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
     }
 
-    @objc private func loginButtonTapped() {
+    @objc private func didTapLoginButton() {
         
         if let userID = userIDTextField.text {
             
@@ -103,6 +101,7 @@ class LoginView: UIView {
     }
 
     @objc private func textFieldDidChange() {
+        
         loginButton.isEnabled = !(userIDTextField.text?.isEmpty ?? true)
     }
 }

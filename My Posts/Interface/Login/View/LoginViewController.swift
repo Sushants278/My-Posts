@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginView.delegate = self
-        viewModel.loginViewModelDelegate = self
+        viewModel.delegate = self
     }
     
     override func loadView() {
@@ -49,7 +49,12 @@ extension LoginViewController: LoginViewModelDelegate {
     
     func presentLoginFailure() {
         
-        /* TO handle failure scenario*/
+        let alertController = UIAlertController(title: "Login Failed", message: "Enter valid userID", preferredStyle: .alert)
         
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+          alertController.addAction(okAction)
+        
+          self.present(alertController, animated: true, completion: nil)
     }
 }
+

@@ -15,11 +15,17 @@ protocol LoginViewModelDelegate: AnyObject {
 
 class LoginViewModel {
     
-    weak var loginViewModelDelegate: LoginViewModelDelegate?
+    weak var delegate: LoginViewModelDelegate?
     
     func save(userID: String) {
         
+        guard let userIDInt = Int(userID), (1...10).contains(userIDInt) else {
+            
+            delegate?.presentLoginFailure()
+            return
+        }
+        
         UserManager.shared.saveUserID(userID)
-        loginViewModelDelegate?.presentLoginSuccessful()
+        delegate?.presentLoginSuccessful()
     }
 }
