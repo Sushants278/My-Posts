@@ -35,6 +35,7 @@
 		8596A7192AA775CC0071EB2F /* UserCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7182AA775CC0071EB2F /* UserCommentsTableViewCell.swift */; };
 		8596A7A02AA7C1930071EB2F /* My_PostsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7982AA7C1560071EB2F /* My_PostsTests.swift */; };
 		8596A7A62AA7C5A90071EB2F /* UserPostsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7A52AA7C5A90071EB2F /* UserPostsViewModelTests.swift */; };
+		8596A7A82AA84A850071EB2F /* UserCommentsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596A7A72AA84A850071EB2F /* UserCommentsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		8596A7982AA7C1560071EB2F /* My_PostsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_PostsTests.swift; sourceTree = "<group>"; };
 		8596A7A32AA7C5390071EB2F /* My Posts.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = "My Posts.xctestplan"; path = "../My Posts.xctestplan"; sourceTree = "<group>"; };
 		8596A7A52AA7C5A90071EB2F /* UserPostsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsViewModelTests.swift; sourceTree = "<group>"; };
+		8596A7A72AA84A850071EB2F /* UserCommentsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				8596A7A52AA7C5A90071EB2F /* UserPostsViewModelTests.swift */,
+				8596A7A72AA84A850071EB2F /* UserCommentsViewModelTests.swift */,
 				8596A7982AA7C1560071EB2F /* My_PostsTests.swift */,
 			);
 			path = "My PostsTests";
@@ -437,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8596A7A82AA84A850071EB2F /* UserCommentsViewModelTests.swift in Sources */,
 				8596A7A02AA7C1930071EB2F /* My_PostsTests.swift in Sources */,
 				8596A7A62AA7C5A90071EB2F /* UserPostsViewModelTests.swift in Sources */,
 			);

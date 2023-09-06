@@ -17,7 +17,8 @@ class UserCommentsViewModel {
     let userPost: UserPost
     var comments: UserComments?
     weak var userPostCommentsViewModelDelegate: UserPostCommentsViewModelDelegate?
-
+    var networkService: UserCommentsRequests = NetworkManager.shared
+    
     init(userPost: UserPost) {
         
         self.userPost = userPost
@@ -26,13 +27,13 @@ class UserCommentsViewModel {
     
     func fetchCommentsForPost() {
         
-        NetworkManager.shared.fetchUserPostComments(for: String(self.userPost.id)) { [weak self] postComments, error in
+        networkService.fetchUserPostComments(for: String(self.userPost.id)) { [weak self] postComments, error in
             
             guard let self = self else { return }
             
             if let _ = error {
                 
-              //  self.userPostsViewModelDelegate?.presentFailureScreen()
+                self.userPostCommentsViewModelDelegate?.presentFailureScreen()
             } else {
                 
                 self.comments = postComments
