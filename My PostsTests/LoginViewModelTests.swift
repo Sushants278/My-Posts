@@ -48,7 +48,7 @@ class LoginViewModelTests: XCTestCase {
         viewModel.delegate = mockDelegate
         
         //when
-        viewModel.save(userID: "5")
+        viewModel.loginWith(userID: "5")
         
         //Then
         XCTAssertTrue(mockDelegate.presentLoginSuccessfulCalled)
@@ -61,7 +61,7 @@ class LoginViewModelTests: XCTestCase {
         viewModel.delegate = mockDelegate
         
         //when
-        viewModel.save(userID: "0")
+        viewModel.loginWith(userID: "0")
         
         //Then
         XCTAssertTrue(mockDelegate.presentLoginFailureCalled)
