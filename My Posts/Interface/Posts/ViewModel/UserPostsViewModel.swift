@@ -18,19 +18,20 @@ class UserPostsViewModel {
     
     weak var userPostsViewModelDelegate: UserPostsViewModelDelegate?
     private var mainUserPosts: UserPosts?
-    private var isShowAllUserPosts = true
-
-     var userPosts: UserPosts? {
+    var isShowAllUserPosts = true
+    var networkService: UserPostsRequests = NetworkManager.shared
+    
+    var userPosts: UserPosts? {
         didSet {
             
             userPostsViewModelDelegate?.presentUserPosts()
         }
     }
-
+    
     func fetchUserPosts() {
         let userID = UserManager.shared.getUserID() ?? ""
         
-        NetworkManager.shared.fetchUserPosts(for: userID) { [weak self] userPosts, error in
+        networkService.fetchUserPosts(for: userID) { [weak self] userPosts, error in
             guard let self = self else { return }
             
             if let _ = error {
@@ -43,7 +44,7 @@ class UserPostsViewModel {
             }
         }
     }
-
+    
     func prepareUserPosts() {
         
         if let userPosts = self.mainUserPosts {
@@ -61,19 +62,7 @@ class UserPostsViewModel {
             self.isShowAllUserPosts = true
         }
     }
-
-    func showAllOrFavoriteUserPosts(isShowFavorite: Bool) {
-        
-        if !isShowFavorite {
-            
-            prepareUserPosts()
-        } else {
-            
-            self.isShowAllUserPosts = false
-            self.userPosts = getAllFavoritedPosts()
-        }
-    }
-
+    
     func favoritePost(userPost: UserPost) {
         
         if isShowAllUserPosts {
@@ -85,29 +74,41 @@ class UserPostsViewModel {
             showAllOrFavoriteUserPosts(isShowFavorite: true)
         }
     }
-
-    func toggleFavorite(userPost: UserPost) {
+    
+    func showAllOrFavoriteUserPosts(isShowFavorite: Bool) {
+        
+        if !isShowFavorite {
+            
+            prepareUserPosts()
+        } else {
+            
+            self.isShowAllUserPosts = false
+            self.userPosts = getAllFavoritedPosts()
+        }
+    }
+    
+    private func toggleFavorite(userPost: UserPost) {
         
         let isFavorite = userPost.isFavorite ?? false
         
         if isFavorite {
             
             removeFavorite(userPost: userPost)
-
+            
         } else {
             
             saveToFavorites(userPost: userPost)
         }
         
         fetchAndUpdateFavoritePosts(isFavorite: !isFavorite, userPost: userPost)
-
+        
         if let indexPath = indexPathForUserPost(userPost) {
             
             userPostsViewModelDelegate?.presentUpdatedUserPosts(indexPath: indexPath)
         }
     }
-
-    func saveToFavorites(userPost: UserPost) {
+    
+    private func saveToFavorites(userPost: UserPost) {
         
         let context = CoreDataStackManager.shared.managedObjectContext
         if let userPostEntity = NSEntityDescription.entity(forEntityName: "FavoritePost", in: context),
@@ -119,8 +120,8 @@ class UserPostsViewModel {
             CoreDataStackManager.shared.saveContext()
         }
     }
-
-    func removeFavorite(userPost: UserPost) {
+    
+    private func removeFavorite(userPost: UserPost) {
         
         let context = CoreDataStackManager.shared.managedObjectContext
         let fetchRequest: NSFetchRequest<FavoritePost> = FavoritePost.fetchRequest()
@@ -136,8 +137,8 @@ class UserPostsViewModel {
             print("Error removing favorite post: \(error)")
         }
     }
-
-    func isPostFavorite(userId: Int, postId: Int) -> Bool {
+    
+    private func isPostFavorite(userId: Int, postId: Int) -> Bool {
         
         let context = CoreDataStackManager.shared.managedObjectContext
         let fetchRequest: NSFetchRequest<FavoritePost> = FavoritePost.fetchRequest()
@@ -151,8 +152,8 @@ class UserPostsViewModel {
             return false
         }
     }
-
-    func getAllFavoritedPosts() -> UserPosts {
+    
+    private func getAllFavoritedPosts() -> UserPosts {
         let context = CoreDataStackManager.shared.managedObjectContext
         let userID = Int(UserManager.shared.getUserID() ?? "") ?? -1
         let fetchRequest: NSFetchRequest<FavoritePost> = FavoritePost.fetchRequest()
@@ -174,16 +175,16 @@ class UserPostsViewModel {
             return []
         }
     }
-
-    func fetchAndUpdateFavoritePosts(isFavorite : Bool, userPost: UserPost) {
+    
+    private func fetchAndUpdateFavoritePosts(isFavorite : Bool, userPost: UserPost) {
         
         guard let userPosts = userPosts else { return }
-            if let index = userPosts.firstIndex(where: { $0.id == userPost.id }) {
-                self.userPosts?[index].isFavorite = isFavorite
-            }
+        if let index = userPosts.firstIndex(where: { $0.id == userPost.id }) {
+            self.userPosts?[index].isFavorite = isFavorite
+        }
     }
-
-    func indexPathForUserPost(_ userPost: UserPost) -> IndexPath? {
+    
+    private func indexPathForUserPost(_ userPost: UserPost) -> IndexPath? {
         
         guard let userPosts = userPosts else { return nil }
         if let rowIndex = userPosts.firstIndex(where: { $0.id == userPost.id }) {
