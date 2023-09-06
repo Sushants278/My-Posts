@@ -18,6 +18,11 @@ protocol UserCommentsRequests {
 
 extension NetworkManager: UserCommentsRequests {
     
+    ///Fetches comments belongs given postID.
+    ///- Parameters:
+    ///  - postID: The ID of the post for whom comments are fetched.
+    /// - handler: A closure to be called upon completion with the fetched post comments or an error.
+    ///
     func fetchUserPostComments(for postID: String, handler: @escaping UserCommentsCompletionClosure) {
         
         var urlComponents = self.urlComponents

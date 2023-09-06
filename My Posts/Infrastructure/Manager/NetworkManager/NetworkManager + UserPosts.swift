@@ -18,6 +18,11 @@ protocol UserPostsRequests {
 
 extension NetworkManager: UserPostsRequests {
     
+    ///Fetches user posts for a given user ID.
+    ///- Parameters:
+    ///  - userID: The ID of the user for whom posts are fetched.
+    /// - handler: A closure to be called upon completion with the fetched user posts or an error.
+
     func fetchUserPosts(for userID: String, handler: @escaping UserPostsCompletionClosure) {
         
         var urlComponents = self.urlComponents

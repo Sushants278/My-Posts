@@ -24,9 +24,4 @@ class UserManager {
         
         return userDefaults.string(forKey: userIDKey)
     }
-
-    func clearUserID() {
-        
-        userDefaults.removeObject(forKey: userIDKey)
-    }
 }
