@@ -67,7 +67,7 @@ class UserCommentsViewModelTests: XCTestCase {
         
         //Given
         let mockDelegate = MockUserPostCommentsViewModelDelegate()
-        viewModel.userPostCommentsViewModelDelegate = mockDelegate
+        viewModel.delegate = mockDelegate
         let mockNetworkService = MockNetworkService()
         viewModel.networkService = mockNetworkService
         
@@ -82,7 +82,7 @@ class UserCommentsViewModelTests: XCTestCase {
         
         //Given
         let mockDelegate = MockUserPostCommentsViewModelDelegate()
-        viewModel.userPostCommentsViewModelDelegate = mockDelegate
+        viewModel.delegate = mockDelegate
         let mockNetworkService = MockNetworkServiceFailure()
         viewModel.networkService = mockNetworkService
         

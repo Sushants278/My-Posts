@@ -74,7 +74,7 @@ class UserPostsViewModelTests: XCTestCase {
         
         //Given
         let mockDelegate = MockUserPostsViewModelDelegate()
-        viewModel.userPostsViewModelDelegate = mockDelegate
+        viewModel.delegate = mockDelegate
         let mockNetworkService = MockNetworkService()
         viewModel.networkService = mockNetworkService
         UserManager.shared.saveUserID("5")
@@ -90,7 +90,7 @@ class UserPostsViewModelTests: XCTestCase {
         
         //Given
         let mockDelegate = MockUserPostsViewModelDelegate()
-        viewModel.userPostsViewModelDelegate = mockDelegate
+        viewModel.delegate = mockDelegate
         let mockNetworkService = MockNetworkServiceFailure()
         viewModel.networkService = mockNetworkService
         UserManager.shared.saveUserID("5")
@@ -124,7 +124,7 @@ class UserPostsViewModelTests: XCTestCase {
     func testSaveFavoritePost() {
          // Given
         let mockDelegate = MockUserPostsViewModelDelegate()
-        viewModel.userPostsViewModelDelegate = mockDelegate
+        viewModel.delegate = mockDelegate
          let userPost = UserPost(userID: 1, id: 1, title: "Test Title", body: "Test Body", isFavorite: false)
         
         viewModel.userPosts = [userPost]
@@ -140,7 +140,7 @@ class UserPostsViewModelTests: XCTestCase {
     func testRemoveFavoritedPost() {
          // Given
         let mockDelegate = MockUserPostsViewModelDelegate()
-        viewModel.userPostsViewModelDelegate = mockDelegate
+        viewModel.delegate = mockDelegate
          let userPost = UserPost(userID: 1, id: 1, title: "Test Title", body: "Test Body", isFavorite: false)
         
         viewModel.userPosts = [userPost]

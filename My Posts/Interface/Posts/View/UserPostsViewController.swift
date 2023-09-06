@@ -16,10 +16,6 @@ class UserPostsViewController: UIViewController {
         
         super.viewDidLoad()
         self.configureView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
         self.viewModel.fetchUserPosts()
     }
     
@@ -31,8 +27,8 @@ class UserPostsViewController: UIViewController {
     private func configureView() {
         
         self.view.backgroundColor = .white
-        self.title = "User Posts"
-        self.viewModel.userPostsViewModelDelegate = self
+        self.title = "My Posts"
+        self.viewModel.delegate = self
         
         self.userPostsView.tableView.register(UserPostTableViewCell.self, forCellReuseIdentifier: "UserPostCell")
         self.userPostsView.tableView.dataSource = self
@@ -73,7 +69,7 @@ extension UserPostsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        60.0
+        80.0
     }
     
     func didTapOnPostCell(userPost: UserPost) {

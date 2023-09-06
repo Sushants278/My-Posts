@@ -15,8 +15,8 @@ protocol UserPostCommentsViewModelDelegate: AnyObject {
 class UserCommentsViewModel {
     
     let userPost: UserPost
-    var comments: UserComments?
-    weak var userPostCommentsViewModelDelegate: UserPostCommentsViewModelDelegate?
+    var postComments: UserComments?
+    weak var delegate: UserPostCommentsViewModelDelegate?
     var networkService: UserCommentsRequests = NetworkManager.shared
     
     init(userPost: UserPost) {
@@ -26,18 +26,18 @@ class UserCommentsViewModel {
     
     
     func fetchCommentsForPost() {
-        
+
         networkService.fetchUserPostComments(for: String(self.userPost.id)) { [weak self] postComments, error in
             
             guard let self = self else { return }
             
             if let _ = error {
                 
-                self.userPostCommentsViewModelDelegate?.presentFailureScreen()
+                self.delegate?.presentFailureScreen()
             } else {
                 
-                self.comments = postComments
-                self.userPostCommentsViewModelDelegate?.presentUserPostComments()
+                self.postComments = postComments
+                self.delegate?.presentUserPostComments()
             }
         }
     }

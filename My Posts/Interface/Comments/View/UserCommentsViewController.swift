@@ -32,11 +32,12 @@ class UserCommentsViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
+        self.title = "Post Comments"
         userCommentsView.configureHeaderView(userPost: viewModel?.userPost)
         self.userCommentsView.tableView.register(UserCommentsTableViewCell.self, forCellReuseIdentifier: "UserCommentsTableViewCell")
         self.userCommentsView.tableView.dataSource = self
         self.userCommentsView.tableView.delegate = self
-        self.viewModel?.userPostCommentsViewModelDelegate = self
+        self.viewModel?.delegate = self
         self.viewModel?.fetchCommentsForPost()
     }
 }
@@ -45,7 +46,7 @@ extension UserCommentsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        self.viewModel?.comments?.count ?? 0
+        self.viewModel?.postComments?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,7 +56,7 @@ extension UserCommentsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserCommentsTableViewCell", for: indexPath) as? UserCommentsTableViewCell, let postComment = viewModel?.comments?[indexPath.row] else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserCommentsTableViewCell", for: indexPath) as? UserCommentsTableViewCell, let postComment = viewModel?.postComments?[indexPath.row] else {
             
             fatalError("Unable to dequeue UserPostTableViewCell")
         }

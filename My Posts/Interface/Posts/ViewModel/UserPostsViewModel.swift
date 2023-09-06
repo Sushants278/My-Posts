@@ -16,7 +16,7 @@ protocol UserPostsViewModelDelegate: AnyObject {
 
 class UserPostsViewModel {
     
-    weak var userPostsViewModelDelegate: UserPostsViewModelDelegate?
+    weak var delegate: UserPostsViewModelDelegate?
     private var mainUserPosts: UserPosts?
     var isShowAllUserPosts = true
     var networkService: UserPostsRequests = NetworkManager.shared
@@ -24,7 +24,7 @@ class UserPostsViewModel {
     var userPosts: UserPosts? {
         didSet {
             
-            userPostsViewModelDelegate?.presentUserPosts()
+            delegate?.presentUserPosts()
         }
     }
     
@@ -36,7 +36,7 @@ class UserPostsViewModel {
             
             if let _ = error {
                 
-                self.userPostsViewModelDelegate?.presentFailureScreen()
+                self.delegate?.presentFailureScreen()
             } else {
                 
                 self.mainUserPosts = userPosts
@@ -104,7 +104,7 @@ class UserPostsViewModel {
         
         if let indexPath = indexPathForUserPost(userPost) {
             
-            userPostsViewModelDelegate?.presentUpdatedUserPosts(indexPath: indexPath)
+            delegate?.presentUpdatedUserPosts(indexPath: indexPath)
         }
     }
     

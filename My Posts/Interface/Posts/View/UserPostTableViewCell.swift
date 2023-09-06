@@ -21,14 +21,22 @@ class UserPostTableViewCell: UITableViewCell {
     
     let postTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    private let bodyLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     let favouriteButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.tintColor = .red
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -49,15 +57,10 @@ class UserPostTableViewCell: UITableViewCell {
     private func setupUI() {
         
         contentView.addSubview(postTitleLabel)
+        contentView.addSubview(bodyLabel)
         contentView.addSubview(favouriteButton)
         
         self.selectionStyle = .none
-        
-        let filledHeartImage = UIImage(systemName: "suit.heart.fill")
-        let unfilledHeartImage = UIImage(systemName: "suit.heart")
-        
-        favouriteButton.setImage(unfilledHeartImage, for: .normal)
-        favouriteButton.setImage(filledHeartImage, for: .selected)
         
         favouriteButton.addTarget(self, action: #selector(favouriteButtonTapped), for: .touchUpInside)
         
@@ -65,12 +68,19 @@ class UserPostTableViewCell: UITableViewCell {
             
             postTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             postTitleLabel.trailingAnchor.constraint(equalTo: favouriteButton.leadingAnchor, constant: -16),
-            postTitleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            postTitleLabel.topAnchor.constraint(equalTo:contentView.topAnchor, constant: 10),
+            postTitleLabel.heightAnchor.constraint(equalToConstant: 20),
+
+            
+            bodyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            bodyLabel.trailingAnchor.constraint(equalTo: favouriteButton.leadingAnchor, constant: -16),
+            bodyLabel.topAnchor.constraint(equalTo:postTitleLabel.bottomAnchor, constant: 10),
+            bodyLabel.heightAnchor.constraint(equalToConstant: 20),
             
             favouriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             favouriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            favouriteButton.widthAnchor.constraint(equalToConstant: 35),
-            favouriteButton.heightAnchor.constraint(equalToConstant: 35)
+            favouriteButton.widthAnchor.constraint(equalToConstant: 30),
+            favouriteButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
@@ -80,13 +90,11 @@ class UserPostTableViewCell: UITableViewCell {
         
         self.userPost = userPost
         postTitleLabel.text = userPost.title
-        favouriteButton.isSelected = userPost.isFavorite ?? false
-    }
-    
-    func configure(with postComment: UserComment) {
-        
-        postTitleLabel.text = postComment.body
-        favouriteButton.isHidden = true
+        bodyLabel.text = userPost.body
+        let isFavorite = userPost.isFavorite ?? false
+        let image = UIImage(systemName: isFavorite ? "suit.heart.fill" : "suit.heart")
+        favouriteButton.setBackgroundImage(image, for: .normal)
+
     }
     
     
